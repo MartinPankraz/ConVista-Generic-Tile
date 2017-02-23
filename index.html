@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="UTF-8">
-    <title>ConVista-Generic-Tile by MartinPankraz</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-	
+	<meta charset="UTF-8">
+	<title>ConVista-Generic-Tile by MartinPankraz</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
   </head>
   <body>
@@ -34,15 +34,62 @@
 
 <p class="justify">Generic Fiori Tile by ConVista Consulting to enhance Fiori Launchpad Experience.</p>
 
+<p class="justify">Generally speaking my custom tile extends the standard Fiori Dynamic Tile exposing its content to the tile configuration screen. Thanks to <a href="https://en.wikipedia.org/wiki/JSONP">jsonp</a> you can assign any service on the web as source for your content.</p>
+<p class="justify">You can add any UI5 content that fits the tile's space. Just browse <a href="https://sapui5.hana.ondemand.com/explored.html#/sample/sap.suite.ui.microchart.sample.ColumnMicroChartInGenericTile/preview">SAPUI5 explored</a> and check the underlying XML-View code. Wrap that XML-snippet in a UI5 fragment-tag defining the necessary namespaces (e.g xmlns="sap.suite.ui.microchart") and you are good to go.</p>
+<p class="justify">The service callback is added to a JSONModel so that you can use UI5 templates to feed the values into your custom tile dynamically during runtime. All examples used on the website use the yahoo finance API but you are not limited to that.</p>
+
 <!--<p><b>See also my blog entries on SCN regarding integration scenarios of Design Studio and Fiori</b></p>-->
 
-<br>
+<!--********************Image Gallery************************************************* -->
+<div class="img">
+  <a target="_blank" href="images/tile_dax.png">
+    <img src="images/tile_dax.png" alt="maps" width="320" height="200">
+  </a>
+  <div class="desc">DAX Live feed with trend indicator</div>
+</div>
+
+<div class="img">
+  <a target="_blank" href="images/tile_sp500.png">
+    <img src="images/tile_sp500.png" alt="maps" width="320" height="200">
+  </a>
+  <div class="desc">S&P 500 Live feed with trend indicator</div>
+</div>
+
+<div class="img">
+  <a target="_blank" href="images/tile_microchart1.png">
+    <img src="images/tile_microchart1.png" alt="maps" width="320" height="200">
+  </a>
+  <div class="desc">Comparison Chart example</div>
+</div>
+
+<div class="img">
+  <a target="_blank" href="images/tile_microchart2.png">
+    <img src="images/tile_microchart2.png" alt="maps" width="320" height="200">
+  </a>
+  <div class="desc">Using Column Chart instead</div>
+</div>
+
+<!--********************Image Gallery end************************************************* -->
+
+<br><br>
 
 <a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#prerequisitesid">Prerequisites</button>
   <div id="prerequisitesid" class="collapse">
     <p class="justify">NetWeaver Gateway with active Fiori Launchpad</p>
 	<p class="justify">UI5 library version 1.38.5 +</p>
+</div>
+
+<a id="yql" class="anchor" href="#yql" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#yqlid">Yahoo Query Language</button>
+  <div id="yqlid" class="collapse">
+    <p class="justify">Use YQL to feed live market data</p>
+</div>
+
+<a id="configexample" class="anchor" href="#configexample" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#configexampleid">Configuration Examples</button>
+  <div id="configexampleid" class="collapse">
+    <p class="justify">Plug&Play XML Snippets</p>
 </div>
 
 <br>
@@ -68,7 +115,8 @@
 		</tbody>
 	 </table>
 	</li>	
-	<li class="list-group-item justify">2) Have fun using my extensions</li>
+	<li class="list-group-item justify">2) Register the new tile as a Fiori chip to make it available as a new tile type. Directions can be found here: <a href="https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/">https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/</a></li>
+	<li class="list-group-item justify">3) Have fun using my custom tile</li>
 	<li class="list-group-item justify">Meet me at ConVista Infoday or our world renowned carnival (traditional German costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)</li>
 </ul>
 
@@ -84,14 +132,16 @@
 
 <p class="justify"><a href="mailto:martin.pankraz@convista.com">martin.pankraz@convista.com</a></p>
 
-      <footer class="siteoriginal-footer">
-	  <a href="https://github.com/MartinPankraz"><img src="images/ConVista_Logo_footer.png" height="30" width="515"></a><br>
-	  <span class="siteoriginal-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-		
-		
-      </footer>
+<p class="justify"><small>This component was inspired by the following SCN blog post <a href="https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/">create-and-use-custom-tile-type</a></small></p>
 
-    </section>
+<footer class="siteoriginal-footer">
+<a href="https://github.com/MartinPankraz"><img src="images/ConVista_Logo_footer.png" height="30" width="515"></a><br>
+<span class="siteoriginal-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+
+
+</footer>
+
+</section>
 
   
   </body>
