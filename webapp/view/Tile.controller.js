@@ -99,9 +99,9 @@ sap.ui.define([
             }
 
             // implement refresh contract
-            /*if (oTileApi.refresh) {
+            if (oTileApi.refresh) {
                 oTileApi.refresh.attachRefresh(this.refreshHandler.bind(null, this));
-            }*/
+            }
 
             // attach the refresh handler also for the visible contract, as we would like
             // on setting visible to true, to directly go and call the oData call
@@ -378,14 +378,16 @@ sap.ui.define([
         },
         
         // loads data once if not in configuration mode
-        /*refreshHandler: function (oController) {
+        refreshHandler: function (oController) {
             var oTileApi = oController.getView().getViewData().chip;
             if (!oTileApi.configurationUi.isEnabled()) {
-                oController.loadData(0);
+            	var oConfig = oController.getView().getModel().getProperty("/config");
+            	//load data with same interval as timer to ensure re-scheduling
+                oController.loadData(oConfig.service_refresh_interval);
             } else {
                 oController.stopRequests();
             }
-        },*/
+        },
 
         // load data in place in case setting visibility from false to true
         // with no additional timer registered
