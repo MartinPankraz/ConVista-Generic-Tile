@@ -4,6 +4,7 @@ sap.ui.define([
 	"use strict";
 	
 	jQuery.sap.require("sap.ui.core.format.DateFormat");
+	jQuery.sap.require("sap.ui.core.format.NumberFormat");
 	
 	return Controller.extend("view.Tile", {
 	//return Controller.extend("convista.com.demo.dynamictile.view.Tile", {
@@ -17,6 +18,8 @@ sap.ui.define([
             
             this.navigationTargetUrl = oConfig.navigation_target_url;
             this.bIsDataRequested = false;
+            //global counter to achieve a counter on template-based value creation
+            this.templateCounter = 0;
             
             var data = sap.ushell.components.tiles.utilsRT.getDataToDisplay(oConfig, {
             	number: (oTileApi.configurationUi.isEnabled() ? 1234 : "...")
@@ -326,6 +329,11 @@ sap.ui.define([
             var oTileApi = this.getView().getViewData().chip;
             if (!sUrl) {
                 return;
+            }else{
+            	var moveYahooDates = this.getUrlParameter("moveYahooDates",sUrl);
+            	if(moveYahooDates){
+					sUrl = this.getMovingDateInterval(sUrl);	
+            	}
             }
 
             //set the timer if required
@@ -354,7 +362,16 @@ sap.ui.define([
 						if(titleText){
 							that.tileContainer.setHeader(titleText);	
 						}
-						var subTitleText = model.getProperty(oConfig.display_subtitle_text);
+						jsonFromString = that.getJSONFromString(oConfig.display_subtitle_text);
+						var subTitleText = "";
+						if(jsonFromString.path){
+							subTitleText = model.getProperty(jsonFromString.path);
+							if(jsonFromString.formatter === ".formatDateTime"){
+								subTitleText = that.formatDateTime(subTitleText);	
+							}
+						}else{
+							subTitleText = model.getProperty(oConfig.display_subtitle_text);
+						}
 						if(subTitleText){
 							that.tileContainer.setSubheader(subTitleText);	
 						}
@@ -404,6 +421,58 @@ sap.ui.define([
             }
         },
         
+        getMovingDateInterval: function(sourceUrl){
+        	var today = new Date();
+        	today.setHours(0);
+    		today.setMinutes(0, 0, 0);
+        	//in case contains startDate, extract it
+        	var startDateIdx = sourceUrl.indexOf("startDate");
+    		var startDate = null;
+        	if(startDateIdx !== -1){
+        		startDate = sourceUrl.substring(startDateIdx+13,startDateIdx+23);
+        		startDate = new Date(startDate);
+    			startDate.setHours(0);
+    			startDate.setMinutes(0, 0, 0);
+        	}
+        	//in case contains endDate, extract it
+        	var endDateIdx = sourceUrl.indexOf("endDate");
+        	var endDate = null;
+        	if(sourceUrl.indexOf("endDate") !== -1){
+        		endDate = sourceUrl.substring(endDateIdx+11,endDateIdx+21);
+        		endDate = new Date(endDate);
+    			endDate.setHours(0);
+    			endDate.setMinutes(0, 0, 0);        		
+        	}
+        	
+        	if(startDate !== null && endDate !== null){
+        		var dateDiff = this.daysBetween(endDate, today);
+        		startDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + dateDiff);
+        		startDate.setMinutes(startDate.getMinutes() - startDate.getTimezoneOffset());
+        		endDate = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate() + dateDiff);
+        		endDate.setMinutes(endDate.getMinutes() - endDate.getTimezoneOffset());
+        		var startDateISO = startDate.toISOString().slice(0, 10);
+        		var endDateISO = endDate.toISOString().slice(0, 10);
+    			sourceUrl = sourceUrl.substring(0,startDateIdx) + "startDate=%27" + startDateISO + sourceUrl.substring(startDateIdx+23);
+    			sourceUrl =	sourceUrl.substring(0,endDateIdx) + "endDate=%27" + endDateISO + sourceUrl.substring(endDateIdx+21);
+        	}
+        	return sourceUrl;
+    	},
+    	
+    	daysBetween: function( date1, date2 ) {
+		  //Get 1 day in milliseconds
+		  var one_day = 1000 * 60 * 60 * 24;
+		
+		  // Convert both dates to milliseconds
+		  var date1_ms = date1.getTime();
+		  var date2_ms = date2.getTime();
+		
+		  // Calculate the difference in milliseconds
+		  var difference_ms = date2_ms - date1_ms;
+		    
+		  // Convert back to days and return
+		  return Math.round(difference_ms / one_day); 
+		},
+        
         getJSONFromString: function(string){
         	var result = null;
         	try{
@@ -414,10 +483,27 @@ sap.ui.define([
 			return result;
         },
         
+        getUrlParameter: function(name, url) {
+		    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+		    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		    var results = regex.exec(url);
+		    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+		},
+        
+        /********Formatter functions for callbacks*******************/
+        
         formatDateTime: function(value){
 	    	var oDateFormat = sap.ui.core.format.DateFormat.getDateTimeInstance({
 	    		pattern: "d MMMM HH:mm:ss",
 	    		style: "medium"
+	    	});
+	    	return oDateFormat.format(new Date(value));	
+        },
+        
+        formatDateShort: function(value){
+	    	var oDateFormat = sap.ui.core.format.DateFormat.getDateTimeInstance({
+	    		pattern: "d MMMM",
+	    		style: "short"
 	    	});
 	    	return oDateFormat.format(new Date(value));	
         },
@@ -480,6 +566,27 @@ sap.ui.define([
         		result = "None";
         	}
         	return result;
+        },
+        
+        formatStringToFloat: function(value){
+        	var parsed = parseFloat(value);
+        	if(isNaN(parsed)){
+        		jQuery.sap.log.warning("parsed Value "+value+" is not a number!");
+        		return 0.0;
+        	}
+        	return parsed;
+        },
+        //global counter to achieve a counter on template-based value creation
+        formatValueToCounter: function(value){
+        	return this.templateCounter++;
+        },
+        
+        formatValueShortNumber: function(value){
+    		var numberFormat = sap.ui.core.format.NumberFormat.getFloatInstance({
+    			maxFractionDigits:1,
+    			style:'short'
+    		});
+			return numberFormat.format(value);
         }
 		
 	});
