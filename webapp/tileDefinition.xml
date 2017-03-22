@@ -2,8 +2,9 @@
 <chip xmlns="http://schemas.sap.com/sapui2/services/Chip/1">
 	<implementation>
 		<sapui5>
-			<basePath>./</basePath>
-			<viewName>view/Tile.view.xml</viewName>
+			<!--<basePath>./</basePath>
+			<viewName>view/Tile.view.xml</viewName>-->
+			<viewName>convista.com.demo.dynamictile.view.Tile.view.xml</viewName>
 		</sapui5>
 	</implementation>
 	<appearance>
