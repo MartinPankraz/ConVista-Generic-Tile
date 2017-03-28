@@ -109,17 +109,28 @@
 	<p/>
 	<p class="justify">JSONModel path for Yahoo API callback structure</p>
 	<h4>Type (xml)</h4>
-	<code>
-	&lt;core:FragmentDefinition xmlns=&quot;sap.m&quot; xmlns:core=&quot;sap.ui.core&quot;&gt;
-	<br>
-	&lt;NumericContent <br>&nbsp;&nbsp;&nbsp;value=&quot;{path:'/query/results/quote/ChangeinPercent'}&quot; <br>&nbsp;&nbsp;&nbsp;scale=&quot;%&quot;
-	<br>&nbsp;&nbsp;&nbsp;valueColor=&quot;{path:'/query/results/quote/ChangeinPercent', formatter:'.formatFloatValueColor'}&quot;
-	<br>&nbsp;&nbsp;&nbsp;indicator=&quot;{path:'/query/results/quote/ChangeinPercent', formatter:'.formatFloatValueIndicator'}&quot;
-<br>&nbsp;&nbsp;&nbsp;truncateValueTo=&quot;5&quot;
-/&gt;
-<br>
+	  
+	<!-- pre tag preserves spaces, DO NOT MOVE OR INDENT THIS CODE -->
+	<pre><code>&lt;core:FragmentDefinition xmlns=&quot;sap.m&quot; xmlns:core=&quot;sap.ui.core&quot;&gt;
+    &lt;NumericContent 
+        <var>value</var> = &quot;{
+          path:'/query/results/quote/ChangeinPercent'
+        }&quot; 
+        <var>scale</var> = &quot;%&quot;
+        <var>valueColor</var> = &quot;{
+          path:'/query/results/quote/ChangeinPercent', 
+          formatter:'.formatFloatValueColor'
+        }&quot;
+        <var>indicator</var> = &quot;{
+          path:'/query/results/quote/ChangeinPercent', 
+          formatter:'.formatFloatValueIndicator'
+        }&quot;
+        <var>truncateValueTo</var> = &quot;5&quot;
+    /&gt;
 &lt;/core:FragmentDefinition&gt;
-	</code>
+</code></pre>
+	
+	  
 	<h4>Footer Text</h4>
 	<code>{"path":"/query/created","formatter":".formatDateTime"}</code>
 	<p/>
@@ -140,31 +151,65 @@
 	<p/>
 	<p class="justify">JSONModel path for Yahoo API callback structure. The structure contains a string but I am applying a number format</p>
 	<h4>Type (xml)</h4>
-	<code>
-	&lt;core:FragmentDefinition xmlns=&quot;sap.suite.ui.microchart&quot; xmlns:core=&quot;sap.ui.core&quot;&gt;<br>
-&lt;AreaMicroChart width=&quot;144px&quot; height=&quot;62px&quot;&gt;
-	<br>&lt;firstYLabel&gt;
-		<br>&nbsp;&nbsp;&nbsp;&lt;AreaMicroChartLabel label=&quot;{path:'/query/results/quote/0/Close', formatter:'.formatValueShortNumber'}&quot; color=&quot;Neutral&quot;/&gt;
-	<br>&lt;/firstYLabel&gt;
-	<br>&lt;lastYLabel&gt;
-		<br>&nbsp;&nbsp;&nbsp;&lt;AreaMicroChartLabel label=&quot;{path:'/query/results/quote/19/Close', formatter:'.formatValueShortNumber'}&quot; color=&quot;Neutral&quot;/&gt;
-	<br>&lt;/lastYLabel&gt;
-	<br>&lt;firstXLabel&gt;
-		<br>&nbsp;&nbsp;&nbsp;&lt;AreaMicroChartLabel label=&quot;{path:'/query/results/quote/0/Date', formatter:'.formatDateShort'}&quot; color=&quot;Neutral&quot;/&gt;
-	<br>&lt;/firstXLabel&gt;
-	<br>&lt;lastXLabel&gt;
-		<br>&nbsp;&nbsp;&nbsp;&lt;AreaMicroChartLabel label=&quot;{path:'/query/results/quote/19/Date', formatter:'.formatDateShort'}&quot; color=&quot;Neutral&quot;/&gt;
-	<br>&lt;/lastXLabel&gt;
-	<br>&lt;chart&gt;
-		<br>&lt;AreaMicroChartItem points=&quot;{path:'/query/results/quote'}&quot;&gt;
-			<br>&lt;points&gt;
-				<br>&lt;AreaMicroChartPoint x=&quot;{path:'Close', formatter:'.formatValueToCounter'}&quot; y=&quot;{path:'Close', formatter:'.formatStringToFloat'}&quot; /&gt;
-			<br>&lt;/points&gt;
-		<br>&lt;/AreaMicroChartItem&gt;
-	<br>&lt;/chart&gt;
-<br>&lt;/AreaMicroChart&gt;
-<br>&lt;/core:FragmentDefinition&gt;
-	</code>
+	  
+	<!-- pre tag preserves spaces, DO NOT MOVE OR INDENT THIS CODE -->  
+	<pre><code>&lt;core:FragmentDefinition xmlns=&quot;sap.suite.ui.microchart&quot; xmlns:core=&quot;sap.ui.core&quot;&gt;
+    &lt;AreaMicroChart width=&quot;144px&quot; height=&quot;62px&quot;&gt;
+        &lt;firstYLabel&gt;
+            &lt;AreaMicroChartLabel 
+                <var>label</var> = &quot;{
+                    path:'/query/results/quote/0/Close', 
+                    formatter:'.formatValueShortNumber'
+                }&quot; 
+                <var>color</var> = &quot;Neutral&quot;/&gt;
+        &lt;/firstYLabel&gt;
+        &lt;lastYLabel&gt;
+            &lt;AreaMicroChartLabel 
+                <var>label</var> = &quot;{
+                    path:'/query/results/quote/19/Close', 
+                    formatter:'.formatValueShortNumber'
+                }&quot; 
+                <var>color</var> = &quot;Neutral&quot;/&gt;
+        &lt;/lastYLabel&gt;
+        &lt;firstXLabel&gt;
+            &lt;AreaMicroChartLabel 
+                <var>label</var> = &quot;{
+                    path:'/query/results/quote/0/Date', 
+                    formatter:'.formatDateShort'
+                }&quot; 
+                <var>color</var> = &quot;Neutral&quot;/&gt;
+        &lt;/firstXLabel&gt;
+        &lt;lastXLabel&gt;
+            &lt;AreaMicroChartLabel 
+                <var>label</var> = &quot;{
+                    path:'/query/results/quote/19/Date', 
+                    formatter:'.formatDateShort'
+                }&quot; 
+                <var>color</var> = &quot;Neutral&quot;/&gt;
+        &lt;/lastXLabel&gt;
+        &lt;chart&gt;
+            &lt;AreaMicroChartItem 
+                <var>points</var> = &quot;{
+                    path:'/query/results/quote'
+                }&quot;&gt;
+                &lt;points&gt;
+                    &lt;AreaMicroChartPoint 
+                        <var>x</var> = &quot;{
+                            path:'Close', 
+                            formatter:'.formatValueToCounter'
+                        }&quot; 
+                        <var>y</var> = &quot;{
+                            path:'Close', 
+                            formatter:'.formatStringToFloat'
+                        }&quot; /&gt;
+                &lt;/points&gt;
+            &lt;/AreaMicroChartItem&gt;
+        &lt;/chart&gt;
+    &lt;/AreaMicroChart&gt;
+&lt;/core:FragmentDefinition&gt;
+	</code></pre>
+	<!-- END OF PRE TAG -->  
+	  
 	<h4>Footer Text</h4>
 	<p/>
 	<p class="justify">Complex template for text property of footer. It uses the JSONModel path for the created date of Yahoo API callback and the date formatter function.</p>
