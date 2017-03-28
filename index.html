@@ -102,10 +102,10 @@
 	
 	<h4>YQL for service URL configuration</h4>
 	<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22^GDAXI%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("^GDAXI")&format=json&env=store://datatables.org/alltableswithkeys</a>
-	<h4>Titel</h4>
+	<h4>Title</h4>
 	<p>Live Market Data</p>
-	<h4>Subtitel</h4>
-	<code>/query/results/quote/Name</code>
+	<h4>Subtitle</h4>
+	  <pre><code>/query/results/quote/Name</code></pre>
 	<p/>
 	<p class="justify">JSONModel path for Yahoo API callback structure</p>
 	<h4>Type (xml)</h4>
@@ -129,10 +129,10 @@
     /&gt;
 &lt;/core:FragmentDefinition&gt;
 </code></pre>
-	
+	<!-- END OF PRE TAG -->
 	  
 	<h4>Footer Text</h4>
-	<code>{"path":"/query/created","formatter":".formatDateTime"}</code>
+	  <pre><code>{"path":"/query/created", "formatter":".formatDateTime"}</code></pre>
 	<p/>
 	<p class="justify">Complex template for text property of footer. It uses the JSONModel path for the created date of Yahoo API callback and the date formatter function.</p>
 	
@@ -147,7 +147,7 @@
 	<h4>Titel</h4>
 	<p>DAX - Market Trend</p>
 	<h4>Subtitel</h4>
-	<code>{"path":"/query/results/quote/0/Close","formatter":".formatStringToFloat"}</code>
+	  <pre><code>{"path":"/query/results/quote/0/Close","formatter":".formatStringToFloat"}</code></pre>
 	<p/>
 	<p class="justify">JSONModel path for Yahoo API callback structure. The structure contains a string but I am applying a number format</p>
 	<h4>Type (xml)</h4>
