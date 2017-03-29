@@ -14,7 +14,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
+	<link rel="stylesheet" href="stylesheets/customStyles.css" type="text/css">
+
 	<!--<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -26,8 +27,37 @@
 	</script>  -->
 	  
   </head>
-  <body>
-    <section class="pageoriginal-header">
+  <body data-spy="scroll" data-target=".navbar" data-offset="60">
+  	<nav class="navbar navbar-inverse navbar-fixed-top">
+  	  <div class="container-fluid">
+  	    <div class="navbar-header">
+  	    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+  	            <span class="icon-bar"></span>
+  	            <span class="icon-bar"></span>
+  	            <span class="icon-bar"></span>                        
+  	      </button>
+  	      <a class="navbar-brand" href="#">Convista</a>
+  	    </div>
+  	    <div class="collapse navbar-collapse" id="myNavbar">
+  	    	<ul class="nav navbar-nav">
+		        <li><a href="#section1">Home</a></li>
+		        <li><a href="#section2">Prerequisites</a></li>
+		        <li><a href="#section3">Yahoo Query Language</a></li>
+		        <li class="dropdown">
+		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <span class="caret"></span></a>
+		        		<ul class="dropdown-menu">
+		        			<li ><a href="#section4">Configuration Examples</a></li>
+		        			<li ><a href="#section4-1">Simple stock rate display</a></li>
+		        			<li ><a href="#section4-2">More complex binding</a></li>
+		        		</ul>
+		        </li>
+		        <li><a href="#section5">Formatter Functions</a></li>
+		        <li><a href="#section6">Installation</a></li>
+		      </ul>
+  	    </div>
+  	  </div>
+  	</nav>
+    <section class="pageoriginal-header" id="section1">
 	  <img src="images/ConVista_Logo_RGB_blue.png" height="102" width="293">
 	  <br>
       <h1 class="projectoriginal-name">Generic Fiori Tile</h1>
@@ -39,90 +69,109 @@
 	  <p style="color:rgba(255, 255, 255, 0.7)">Clone link for SAP WebIDE</p><a href="https://github.com/MartinPankraz/ConVista-Generic-Tile.git" style="color:white!important;">https://github.com/MartinPankraz/ConVista-Generic-Tile.git</a>
     </section>
 
-    <section class="mainoriginal-content">
-      <h1>
-<a id="convista-ds-sdk-visualizations" class="anchor" href="#convista-ds-sdk-visualizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h1>
 
-<p class="justify">Generic Fiori Tile by ConVista Consulting to enhance Fiori Launchpad Experience.</p>
-<p class="justify">According to the SAP Fiori community you can achieve a similar solution as of HANA SP09 with the <a href="https://blogs.sap.com/2015/03/09/creating-custom-tiles-with-sap-hana-ui-integration-services-uis/">Custom App Launcher</a> tile type. However my solution does not involve programming object deployment or a HANA platform at all. So if you want to keep it simple, read on...<p/>
+	
+	<div class="container paddingCellphone">
+		<div class="row initialRow text-justify">
+			      <!-- <h2  class="anchors">
+			      			<a id="convista-ds-sdk-visualizations" class="anchor" href="#convista-ds-sdk-visualizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2> -->
+
+			<p>Generic Fiori Tile by ConVista Consulting to enhance Fiori Launchpad Experience.</p>
+			<p>According to the SAP Fiori community you can achieve a similar solution as of HANA SP09 with the <a href="https://blogs.sap.com/2015/03/09/creating-custom-tiles-with-sap-hana-ui-integration-services-uis/">Custom App Launcher</a> tile type. However my solution does not involve programming object deployment or a HANA platform at all. So if you want to keep it simple, read on...</p>
+		</div>
+      
 
 <!--********************Image Gallery************************************************* -->
-<div class="img">
-  <a target="_blank" href="images/tile_dax.png">
-    <img src="images/tile_dax.png" alt="maps" width="320" height="200">
-  </a>
-  <div class="desc">DAX Live feed with trend indicator</div>
-</div>
+	<div class="row normalRow">
+		<div class="col-xs-6 col-sm-3 ">
+		  <a target="_blank" href="images/tile_dax.png">
+		    <img src="images/tile_dax.png" alt="maps" class="img-responsive">
+		  </a>
+		  <div class="desc">
+		 	 <em>DAX Live feed with trend indicator</em>
+		  </div>
+		</div>
 
-<div class="img">
-  <a target="_blank" href="images/tile_sp500.png">
-    <img src="images/tile_sp500.png" alt="maps" width="320" height="200">
-  </a>
-  <div class="desc">S&P 500 Live feed with trend indicator</div>
-</div>
+		<div class="col-xs-6 col-sm-3">
+		  <a target="_blank" href="images/tile_sp500.png">
+		    <img src="images/tile_sp500.png" alt="maps" class="img-responsive">
+		  </a>
+		  <div class="desc">
+		  	<em>S&P 500 Live feed with trend indicator</em>
+		  </div>
+		</div>
 
-<div class="img">
-  <a target="_blank" href="images/tile_microchart1.png">
-    <img src="images/tile_microchart1.png" alt="maps" width="320" height="200">
-  </a>
-  <div class="desc">Comparison Chart example</div>
-</div>
+		<div class="col-xs-6 col-sm-3">
+		  <a target="_blank" href="images/tile_microchart1.png">
+		    <img src="images/tile_microchart1.png" alt="maps" class="img-responsive">
+		  </a>
+		  <div class="desc">
+		  	<em>Comparison Chart example</em>
+		  </div>
+		</div>
 
-<div class="img">
-  <a target="_blank" href="images/tile_microchart_area_trend.png">
-    <img src="images/tile_microchart_area_trend.png" alt="maps" width="320" height="200">
-  </a>
-  <div class="desc">Market Data Trend Chart</div>
-</div>
+		<div class="col-xs-6 col-sm-3">
+		  <a target="_blank" href="images/tile_microchart_area_trend.png">
+		    <img src="images/tile_microchart_area_trend.png" alt="maps"  class="img-responsive">
+		  </a>
+		  <div class="desc">
+		  	<em>Market Data Trend Chart</em>
+		  </div>
+		</div>
+	</div>
+	
 
 <!--********************Image Gallery end************************************************* -->
+	<div class="row text-justify">
+		<p>Generally speaking my custom tile extends the standard Fiori Dynamic Tile exposing its content to the tile configuration screen. Thanks to <a href="https://en.wikipedia.org/wiki/JSONP">jsonp</a> you can assign any service on the web as source for your content.</p>
+		<p>You can add any UI5 content that fits the tile's space. Just browse <a href="https://sapui5.hana.ondemand.com/explored.html#/sample/sap.suite.ui.microchart.sample.ColumnMicroChartInGenericTile/preview">SAPUI5 explored</a> and check the underlying XML-View code. Wrap that XML-snippet in a UI5 fragment-tag defining the necessary namespaces (e.g xmlns="sap.suite.ui.microchart") and you are good to go.</p>
+		<p>The service callback is added to a JSONModel so that you can use UI5 templates to feed the values into your custom tile dynamically during runtime. All examples used on the website use the yahoo finance API but you are not limited to that.</p>
 
-<p class="justify">Generally speaking my custom tile extends the standard Fiori Dynamic Tile exposing its content to the tile configuration screen. Thanks to <a href="https://en.wikipedia.org/wiki/JSONP">jsonp</a> you can assign any service on the web as source for your content.</p>
-<p class="justify">You can add any UI5 content that fits the tile's space. Just browse <a href="https://sapui5.hana.ondemand.com/explored.html#/sample/sap.suite.ui.microchart.sample.ColumnMicroChartInGenericTile/preview">SAPUI5 explored</a> and check the underlying XML-View code. Wrap that XML-snippet in a UI5 fragment-tag defining the necessary namespaces (e.g xmlns="sap.suite.ui.microchart") and you are good to go.</p>
-<p class="justify">The service callback is added to a JSONModel so that you can use UI5 templates to feed the values into your custom tile dynamically during runtime. All examples used on the website use the yahoo finance API but you are not limited to that.</p>
-
-<p class="justify">As per Fiori style guide your tiles can be rendered in two shapes. The standard tile is a square (1x1). The second option is a wide rectangle (2x1). They adapt slightly on mobile devices in total size to save space.</p>
-
-<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#prerequisitesid">Prerequisites</button>
-  <div id="prerequisitesid" class="collapse">
-    <p class="justify">NetWeaver Gateway with active Fiori Launchpad</p>
-	<p class="justify">UI5 library version 1.38.5 +</p>
-</div>
-
-<a id="yql" class="anchor" href="#yql" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#yqlid">Yahoo Query Language</button>
-  <div id="yqlid" class="collapse">
-    <p class="justify">
-	The Yahoo Query Language (YQL) - is a sql-like language to query Yahoo's Web Services and API's such as the Yahoo Finance API. I am using the Finance API in all of my examples given below.
-	You can find more information on YQL, available API's and usage examples here: <a href="https://developer.yahoo.com/yql/">YQL</a>.<br><br>There is also a <a href="https://developer.yahoo.com/yql/console/">developer console</a> to create your API queries 
-	in a simplified environment. It makes sense to have the query right, before integrating it with my custom Fiori tile. Please note that you need to work with JSON output rather than XML because my component relies on JSON models.
-	</p>
-</div>
-
-<a id="configexample" class="anchor" href="#configexample" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#configexampleid">Configuration Examples</button>
-  <div id="configexampleid" class="collapse">
-	<p class="justify">The following properties are intended to be used with the Fiori tile configuration screen.</p>
-	<img src="images/tile_config_screen_example.png" alt="Fiori config screen">
+		<p>As per Fiori style guide your tiles can be rendered in two shapes. The standard tile is a square (1x1). The second option is a wide rectangle (2x1). They adapt slightly on mobile devices in total size to save space.</p>
+	</div>
 	
-	<h2>Simple stock rate display (DAX symbol GDAXI)</h2>
-    <p class="justify">Value loaded from Yahoo Finance API in json format. Check first example picture "DAX live feed with trend indicator" above for reference.</p>
+	<div class="row text-center" id="section2">
+		<h2  class="anchors">Prerequisites</h2>
+		    <p >NetWeaver Gateway with active Fiori Launchpad</p>
+			<p >UI5 library version 1.38.5 +</p>
+	</div>
 	
-	<img src="images/tile_dax.png" alt="maps" width="150">
-	
-	<h4>YQL for service URL configuration</h4>
-	<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22^GDAXI%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("^GDAXI")&format=json&env=store://datatables.org/alltableswithkeys</a>
-	<h4>Title</h4>
-	<p>Live Market Data</p>
-	<h4>Subtitle</h4>
-	  <pre><code>/query/results/quote/Name</code></pre>
-	<p/>
-	<p class="justify">JSONModel path for Yahoo API callback structure</p>
-	<h4>Type (xml)</h4>
-	  
-	<!-- pre tag preserves spaces, DO NOT MOVE OR INDENT THIS CODE -->
-	<pre><code>&lt;core:FragmentDefinition xmlns=&quot;sap.m&quot; xmlns:core=&quot;sap.ui.core&quot;&gt;
+	<div class="row" id="section3">
+		<h2  class="anchors">Yahoo Query Language</h2>
+		<div class="text-justify">
+			    <p>The Yahoo Query Language (YQL) - is a sql-like language to query Yahoo's Web Services and API's such as the Yahoo Finance API. I am using the Finance API in all of my examples given below.
+				You can find more information on YQL, available API's and usage examples here: <a href="https://developer.yahoo.com/yql/">YQL</a>.</p>
+				<p>There is also a <a href="https://developer.yahoo.com/yql/console/">developer console</a> to create your API queries 
+				in a simplified environment. It makes sense to have the query right, before integrating it with my custom Fiori tile. Please note that you need to work with JSON output rather than XML because my component relies on JSON models.
+				</p>
+		</div>
+	</div>
+
+	<div class="row" id="section4">
+		<h2 class="anchors">Configuration Examples</h2>
+			<p class="justify normalRow">The following properties are intended to be used with the Fiori tile configuration screen.</p>
+			<div>
+				<img src="images/tile_config_screen_example.png" alt="Fiori config screen" class="img-responsive centered">
+			</div>
+	</div>
+
+	<div class="row" id="section4-1">
+		<h3  class="anchors">Simple stock rate display (DAX symbol GDAXI)</h3>
+	    <p class="justify">Value loaded from Yahoo Finance API in json format. Check first example picture "DAX live feed with trend indicator" above for reference.</p>
+		
+		<img src="images/tile_dax.png" alt="maps" width="150"/>
+		
+		<h4>YQL for service URL configuration</h4>
+		<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22^GDAXI%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("^GDAXI")&format=json&env=store://datatables.org/alltableswithkeys</a>
+		<h4>Title</h4>
+		<p>Live Market Data</p>
+		<h4>Subtitle</h4>
+		<p class="justify">JSONModel path for Yahoo API callback structure</p>
+		  <pre><code>/query/results/quote/Name</code></pre>
+		<h4>Type (xml)</h4>
+					  
+					<!-- pre tag preserves spaces, DO NOT MOVE OR INDENT THIS CODE -->
+<pre><code>&lt;core:FragmentDefinition xmlns=&quot;sap.m&quot; xmlns:core=&quot;sap.ui.core&quot;&gt;
     &lt;NumericContent 
         <var>value</var> = &quot;{
           path:'/query/results/quote/ChangeinPercent'
@@ -140,144 +189,145 @@
     /&gt;
 &lt;/core:FragmentDefinition&gt;
 </code></pre>
-	<!-- END OF PRE TAG -->
-	  
-	<h4>Footer Text</h4>
-	  <pre><code>{"path":"/query/created", "formatter":".formatDateTime"}</code></pre>
-	<p/>
-	<p class="justify">Complex template for text property of footer. It uses the JSONModel path for the created date of Yahoo API callback and the date formatter function.</p>
-	
-	
-	<h2>More complex binding to create trend chart from historic stock values (DAX symbol GDAXI)</h2>
-	<p class="justify">Check last example picture from image gallery "Market Data Trend Chart" above for reference. The following properties are intended to be used with the Fiori tile configuration screen.</p>
-	
-	<img src="images/tile_microchart_area_trend.png" alt="microchart example" width="150">
-	
-	<h4>YQL for service URL configuration</h4>
-	<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20in%20(%22^GDAXI%22)%20AND%20startDate=%272017-02-01%27%20AND%20endDate=%272017-03-02%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&moveYahooDates=true">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("^GDAXI") AND startDate='2017-02-01' AND endDate='2017-03-02'&format=json&env=store://datatables.org/alltableswithkeys&moveYahooDates=true</a>
-	<h4>Titel</h4>
-	<p>DAX - Market Trend</p>
-	<h4>Subtitel</h4>
-	  <pre><code>{"path":"/query/results/quote/0/Close","formatter":".formatStringToFloat"}</code></pre>
-	<p/>
-	<p class="justify">JSONModel path for Yahoo API callback structure. The structure contains a string but I am applying a number format</p>
-	<h4>Type (xml)</h4>
-	  
-	<!-- pre tag preserves spaces, DO NOT MOVE OR INDENT THIS CODE -->  
-	<pre><code>&lt;core:FragmentDefinition xmlns=&quot;sap.suite.ui.microchart&quot; xmlns:core=&quot;sap.ui.core&quot;&gt;
-    &lt;AreaMicroChart width=&quot;144px&quot; height=&quot;62px&quot;&gt;
-        &lt;firstYLabel&gt;
-            &lt;AreaMicroChartLabel 
-                <var>label</var> = &quot;{
-                    path:'/query/results/quote/0/Close', 
-                    formatter:'.formatValueShortNumber'
-                }&quot; 
-                <var>color</var> = &quot;Neutral&quot;/&gt;
-        &lt;/firstYLabel&gt;
-        &lt;lastYLabel&gt;
-            &lt;AreaMicroChartLabel 
-                <var>label</var> = &quot;{
-                    path:'/query/results/quote/19/Close', 
-                    formatter:'.formatValueShortNumber'
-                }&quot; 
-                <var>color</var> = &quot;Neutral&quot;/&gt;
-        &lt;/lastYLabel&gt;
-        &lt;firstXLabel&gt;
-            &lt;AreaMicroChartLabel 
-                <var>label</var> = &quot;{
-                    path:'/query/results/quote/0/Date', 
-                    formatter:'.formatDateShort'
-                }&quot; 
-                <var>color</var> = &quot;Neutral&quot;/&gt;
-        &lt;/firstXLabel&gt;
-        &lt;lastXLabel&gt;
-            &lt;AreaMicroChartLabel 
-                <var>label</var> = &quot;{
-                    path:'/query/results/quote/19/Date', 
-                    formatter:'.formatDateShort'
-                }&quot; 
-                <var>color</var> = &quot;Neutral&quot;/&gt;
-        &lt;/lastXLabel&gt;
-        &lt;chart&gt;
-            &lt;AreaMicroChartItem 
-                <var>points</var> = &quot;{
-                    path:'/query/results/quote'
-                }&quot;&gt;
-                &lt;points&gt;
-                    &lt;AreaMicroChartPoint 
-                        <var>x</var> = &quot;{
-                            path:'Close', 
-                            formatter:'.formatValueToCounter'
-                        }&quot; 
-                        <var>y</var> = &quot;{
-                            path:'Close', 
-                            formatter:'.formatStringToFloat'
-                        }&quot; /&gt;
-                &lt;/points&gt;
-            &lt;/AreaMicroChartItem&gt;
-        &lt;/chart&gt;
-    &lt;/AreaMicroChart&gt;
-&lt;/core:FragmentDefinition&gt;
-	</code></pre>
-	<!-- END OF PRE TAG -->  
-	  
-	<h4>Footer Text</h4>
-	<p/>
-	<p class="justify">Complex template for text property of footer. It uses the JSONModel path for the created date of Yahoo API callback and the date formatter function.</p>
-</div>
+					<!-- END OF PRE TAG -->
+					  
+					<h4>Footer Text</h4>
+					<p class="justify">Complex template for text property of footer. It uses the JSONModel path for the created date of Yahoo API callback and the date formatter function.</p>
+					  <pre><code>{"path":"/query/created", "formatter":".formatDateTime"}</code></pre>
+					
+	</div>
+	<div class="row" id="section4-2">
+		<h3  class="anchors">More complex binding to create trend chart from historic stock values (DAX symbol GDAXI)</h3>
+		<p class="justify">Check last example picture from image gallery "Market Data Trend Chart" above for reference. The following properties are intended to be used with the Fiori tile configuration screen.</p>
+		
+		<img src="images/tile_microchart_area_trend.png" alt="microchart example" width="150">
+		
+		<h4>YQL for service URL configuration</h4>
+		<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20in%20(%22^GDAXI%22)%20AND%20startDate=%272017-02-01%27%20AND%20endDate=%272017-03-02%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&moveYahooDates=true">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("^GDAXI") AND startDate='2017-02-01' AND endDate='2017-03-02'&format=json&env=store://datatables.org/alltableswithkeys&moveYahooDates=true</a>
+		<h4>Titel</h4>
+		<p>DAX - Market Trend</p>
 
-<a id="apiexample" class="anchor" href="#apiexample" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#apiexampleid">Formatter Functions</button>
-  <div id="apiexampleid" class="collapse">
-    <p class="justify">In order to be able to derive meaning from arbitrary web service callbacks, I added some formatter functions for ease of use. You can call them on your UI5 templates as usual. See my example below or check the Configuration Examples section above for more complex applications.</p>
-	 <table class="table">
-		<thead>
-			<tr>
-				<th nowrap>Function Name</th>
-				<th nowrap>Description</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>formatDateTime</td>
-				<td>Format a value to date (d MMMM HH:mm:ss) with medium style</td>
-			</tr>
-			<tr>
-				<td>formatDateShort</td>
-				<td>Format a value to date (d MMMM) with short style</td>
-			</tr>
-			<tr>
-				<td>formatFloatValueColor</td>
-				<td>Format a float value to Neutral (value 0), Error (value < 0) and Good (value > 0)</td>
-			</tr>
-			<tr>
-				<td>formatFloatValueIndicator</td>
-				<td>Format a float value to None (value 0), Down (value < 0) and Up (value > 0)</td>
-			</tr>
-			<tr>
-				<td>formatIntValueColor</td>
-				<td>Format a integer value to Neutral (value 0), Error (value < 0) and Good (value > 0)</td>
-			</tr>
-			<tr>
-				<td>formatIntValueIndicator</td>
-				<td>Format a integer value to None (value 0), Down (value < 0) and Up (value > 0)</td>
-			</tr>
-			<tr>
-				<td>formatStringToFloat</td>
-				<td>Format a float value to String. This is necessary for some UI5 templates.</td>
-			</tr>
-			<tr>
-				<td>formatValueToCounter</td>
-				<td>Helper function to get x-axis values for market data to distribute them equally on the axis. It counts the values for the given values.</td>
-			</tr>
-			<tr>
-				<td>formatValueShortNumber</td>
-				<td>Format a value to a short number. This is used to shorten big numbers and add abbreviations like (K,M and G etc.). This was used on the market data trend chart example for instance.</td>
-			</tr>
-		</tbody>
-	 </table>
-	 <p class="justify">UI5-XML-Fragment snippet:</p>
-	 <pre><code>&lt;AreaMicroChartPoint 
+		<h4>Subtitel</h4>
+		<p class="justify">JSONModel path for Yahoo API callback structure. The structure contains a string but I am applying a number format</p>
+		  <pre><code>{"path":"/query/results/quote/0/Close","formatter":".formatStringToFloat"}</code></pre>
+		
+		<h4>Type (xml)</h4> 
+		<!-- pre tag preserves spaces, DO NOT MOVE OR INDENT THIS CODE -->  
+		<pre>
+<code>&lt;core:FragmentDefinition xmlns=&quot;sap.suite.ui.microchart&quot; xmlns:core=&quot;sap.ui.core&quot;&gt;
+	&lt;AreaMicroChart width=&quot;144px&quot; height=&quot;62px&quot;&gt;
+	    &lt;firstYLabel&gt;
+	        &lt;AreaMicroChartLabel 
+	            <var>label</var> = &quot;{
+	                path:'/query/results/quote/0/Close', 
+	                formatter:'.formatValueShortNumber'
+	            }&quot; 
+	            <var>color</var> = &quot;Neutral&quot;/&gt;
+	    &lt;/firstYLabel&gt;
+	    &lt;lastYLabel&gt;
+	        &lt;AreaMicroChartLabel 
+	            <var>label</var> = &quot;{
+	                path:'/query/results/quote/19/Close', 
+	                formatter:'.formatValueShortNumber'
+	            }&quot; 
+	            <var>color</var> = &quot;Neutral&quot;/&gt;
+	    &lt;/lastYLabel&gt;
+	    &lt;firstXLabel&gt;
+	        &lt;AreaMicroChartLabel 
+	            <var>label</var> = &quot;{
+	                path:'/query/results/quote/0/Date', 
+	                formatter:'.formatDateShort'
+	            }&quot; 
+	            <var>color</var> = &quot;Neutral&quot;/&gt;
+	    &lt;/firstXLabel&gt;
+	    &lt;lastXLabel&gt;
+	        &lt;AreaMicroChartLabel 
+	            <var>label</var> = &quot;{
+	                path:'/query/results/quote/19/Date', 
+	                formatter:'.formatDateShort'
+	            }&quot; 
+	            <var>color</var> = &quot;Neutral&quot;/&gt;
+	    &lt;/lastXLabel&gt;
+	    &lt;chart&gt;
+	        &lt;AreaMicroChartItem 
+	            <var>points</var> = &quot;{
+	                path:'/query/results/quote'
+	            }&quot;&gt;
+	            &lt;points&gt;
+	                &lt;AreaMicroChartPoint 
+	                    <var>x</var> = &quot;{
+	                        path:'Close', 
+	                        formatter:'.formatValueToCounter'
+	                    }&quot; 
+	                    <var>y</var> = &quot;{
+	                        path:'Close', 
+	                        formatter:'.formatStringToFloat'
+	                    }&quot; /&gt;
+	            &lt;/points&gt;
+	        &lt;/AreaMicroChartItem&gt;
+	    &lt;/chart&gt;
+	&lt;/AreaMicroChart&gt;
+&lt;/core:FragmentDefinition&gt;
+</code></pre>
+					<!-- END OF PRE TAG -->  
+					<h4>Footer Text</h4>
+					<p class="justify">Complex template for text property of footer. It uses the JSONModel path for the created date of Yahoo API callback and the date formatter function.</p>
+	</div>
+
+	<div class="row" id="section5">
+		<h2 class="anchors">Formatter Functions</h2>
+		    <p class="justify normalRow">In order to be able to derive meaning from arbitrary web service callbacks, I added some formatter functions for ease of use. You can call them on your UI5 templates as usual. See my example below or check the Configuration Examples section above for more complex applications.</p>
+			 <table class="table normalRow">
+				<thead>
+					<tr>
+						<th nowrap>Function Name</th>
+						<th nowrap>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>formatDateTime</td>
+						<td>Format a value to date (d MMMM HH:mm:ss) with medium style</td>
+					</tr>
+					<tr>
+						<td>formatDateShort</td>
+						<td>Format a value to date (d MMMM) with short style</td>
+					</tr>
+					<tr>
+						<td>formatFloatValueColor</td>
+						<td>Format a float value to Neutral (value 0), Error (value < 0) and Good (value > 0)</td>
+					</tr>
+					<tr>
+						<td>formatFloatValueIndicator</td>
+						<td>Format a float value to None (value 0), Down (value < 0) and Up (value > 0)</td>
+					</tr>
+					<tr>
+						<td>formatIntValueColor</td>
+						<td>Format a integer value to Neutral (value 0), Error (value < 0) and Good (value > 0)</td>
+					</tr>
+					<tr>
+						<td>formatIntValueIndicator</td>
+						<td>Format a integer value to None (value 0), Down (value < 0) and Up (value > 0)</td>
+					</tr>
+					<tr>
+						<td>formatStringToFloat</td>
+						<td>Format a float value to String. This is necessary for some UI5 templates.</td>
+					</tr>
+					<tr>
+						<td>formatValueToCounter</td>
+						<td>Helper function to get x-axis values for market data to distribute them equally on the axis. It counts the values for the given values.</td>
+					</tr>
+					<tr>
+						<td>formatValueShortNumber</td>
+						<td>Format a value to a short number. This is used to shorten big numbers and add abbreviations like (K,M and G etc.). This was used on the market data trend chart example for instance.</td>
+					</tr>
+				</tbody>
+			 </table>
+			 <h4>UI5-XML-Fragment snippet:</h4>
+
+			 <!-- pre tag preserves spaces, DO NOT MOVE OR INDENT THIS CODE -->
+			 <pre>
+<code>&lt;AreaMicroChartPoint 
   <var>x</var> = &quot;{
     path:'Close',
     formatter:'<b>.formatValueToCounter</b>'
@@ -288,61 +338,109 @@
   }&quot;
 /&gt;
 </code></pre>
+			<!-- END OF PRE TAG -->  
+
+	</div>
+
+<div class="row" id="section6">
+	<h2 class="anchors">Installation</h2>
+
+	<ul id="installationid" class="list-group initialRow">
+		<li class="list-group-item">
+		<p class="justify"><b>1)</b> You have two options to deploy the new tile. The first one involves SAP WebIDE and the second one running a SAP backend program</p>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-5 borderedDivs text-center">
+					<h4> 
+						WebIDE
+					</h4>
+					<p>
+						Clone this GitHub repository using link below and deploy on ABAP server (Cloud Connector setup necessary for on-premise system) 
+					</p>
+					<p>
+						<a href="https://github.com/MartinPankraz/ConVista-Generic-Tile">Link to repository</a>
+					</p>
+				</div>
+				<div class="col-xs-12 col-sm-5  borderedDivs text-center">
+					<h4>
+						SE38 -> /UI5/UI5_REPOSITORY_LOAD
+					</h4>
+					<p>
+						Upload zipped version of the app using transaction SE38 
+					</p>
+					<p>
+						<a href="https://github.com/MartinPankraz/ConVista-Generic-Tile/releases/ConVista-Generic-Tile.zip">Link to repository</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		 <!-- <table class="table table-bordered text-center">
+		 			<thead>
+		 				<tr>
+		 					<th nowrap class="text-center">WebIDE</th>
+		 					<th nowrap class="text-center">SE38 -> /UI5/UI5_REPOSITORY_LOAD</th>
+		 				</tr>
+		 			</thead>
+		 			<tbody>
+		 				<tr>
+		 					<td>Clone this GitHub repository using link below and deploy on ABAP server (Cloud Connector setup necessary for on-premise system) <a href="https://github.com/MartinPankraz/ConVista-Generic-Tile">https://github.com/MartinPankraz/ConVista-Generic-Tile</a></td>
+		 					<td>Upload zipped version of the app using transaction SE38 <a href="https://github.com/MartinPankraz/ConVista-Generic-Tile/releases/ConVista-Generic-Tile.zip">https://github.com/MartinPankraz/ConVista-Generic-Tile/releases/ConVista-Generic-Tile.zip</a></td>
+		 				</tr>
+		 			</tbody>
+		 </table> -->
+		</li>	
+		<li class="list-group-item justify"><b>2)</b> Register the new tile as a Fiori chip to make it available as a new tile type. <a href="https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/">Check directions</a></li>
+		<li class="list-group-item justify"><b>3)</b> Have fun using my custom tile</li>
+		<li class="list-group-item justify">Meet me at ConVista Infoday or our world renowned carnival (traditional German costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)</li>
+	</ul>
+
+	<p class="normalRow text-center"><b>See also my blog entries on SCN regarding integration scenarios of Design Studio and Fiori</b></p>
+
+	<h2  class="anchors">License</h2>
+
+	<p class="text-center normalRow">This software product is licensed under the Apache License 2.0.</p>
+
+	<h2  class="anchors">Final Words</h2>
+
+	<p class="text-center">Feel free to contact me for any advice on usage, installation, and plain trouble shooting or a chat about the awesomeness of the fusion of Design Studio and Fiori if you like. Feedback and improvement suggestions are also very welcome.</p>
+
+	<p class="text-center"><a href="mailto:martin.pankraz@convista.com">martin.pankraz@convista.com</a></p>
+
+	<p class="text-center"><small>This component was inspired by the following SCN blog post <a href="https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/">create-and-use-custom-tile-type</a></small></p>
 </div>
 
-<br>
-
-<h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
-
-<ul id="installationid" class="list-group">
-	<li class="list-group-item justify">
-	<p class="justify">1) You have two options to deploy the new tile. The first one involves SAP WebIDE and the second one running a SAP backend programm</p>
-	 <table class="table">
-		<thead>
-			<tr>
-				<th nowrap>WebIDE</th>
-				<th nowrap>SE38 -> /UI5/UI5_REPOSITORY_LOAD</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Clone this GitHub repository using link below and deploy on ABAP server (Cloud Connector setup necessary for on-premise system) <a href="https://github.com/MartinPankraz/ConVista-Generic-Tile">https://github.com/MartinPankraz/ConVista-Generic-Tile</a></td>
-				<td>Upload zipped version of the app using transaction SE38 <a href="https://github.com/MartinPankraz/ConVista-Generic-Tile/releases/ConVista-Generic-Tile.zip">https://github.com/MartinPankraz/ConVista-Generic-Tile/releases/ConVista-Generic-Tile.zip</td>
-			</tr>
-		</tbody>
-	 </table>
-	</li>	
-	<li class="list-group-item justify">2) Register the new tile as a Fiori chip to make it available as a new tile type. Directions can be found here: <a href="https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/">https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/</a></li>
-	<li class="list-group-item justify">3) Have fun using my custom tile</li>
-	<li class="list-group-item justify">Meet me at ConVista Infoday or our world renowned carnival (traditional German costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)</li>
-</ul>
-
-<p><b>See also my blog entries on SCN regarding integration scenarios of Design Studio and Fiori</b></p>
-
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
-
-<p class="justify">This software product is licensed under the Apache License 2.0.</p>
-
-<h2>
-<a id="final-words" class="anchor" href="#final-words" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Final Words</h2>
-
-<p class="justify">Feel free to contact me for any advice on usage, installation, and plain trouble shooting or a chat about the awesomeness of the fusion of Design Studio and Fiori if you like. Feedback and improvement suggestions are also very welcome.</p>
-
-<p class="justify"><a href="mailto:martin.pankraz@convista.com">martin.pankraz@convista.com</a></p>
-
-<p class="justify"><small>This component was inspired by the following SCN blog post <a href="https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/">create-and-use-custom-tile-type</a></small></p>
-
-<footer class="siteoriginal-footer">
-<a href="https://github.com/MartinPankraz"><img src="images/ConVista_Logo_footer.png" height="30" width="515"></a><br>
-<span class="siteoriginal-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-
-
+<footer class="siteoriginal-footer text-center normalRow">
+	<p>
+		<a href="https://github.com/MartinPankraz">
+			<img src="images/ConVista_Logo_footer.png" height="30" width="515">
+		</a>
+	</p>
+	<p><span class="siteoriginal-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span></p>
 </footer>
 
-</section>
-
+</div>
   
+
+  <script type="text/javascript">
+  	$("#myNavbar ul li a[href^='#']").on('click', function(e) {
+
+  	   // prevent default anchor click behavior
+  	   e.preventDefault();
+
+  	   // store hash
+  	   var hash = this.hash;
+  	   var offset = 50;
+  	   // animate
+  	   $('html, body').animate({
+  	       scrollTop: $(hash).offset().top - offset + 'px'
+  	     }, 1000, function(){
+
+  	       // when done, add hash to url
+  	       // (default click behaviour)
+  	       window.location.hash = hash;
+  	     });
+
+  	});
+  </script>
   </body>
 </html>
