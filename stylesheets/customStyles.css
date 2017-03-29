@@ -181,4 +181,7 @@ pre code {
     display: block;
     margin-bottom: 15px;
   }
+  .exampleImg{
+	max-width: 250px;
+  }
 }

@@ -64,11 +64,11 @@
 	  <br>
       <h1 class="projectoriginal-name">Generic Fiori Tile</h1>
       <h2 class="projectoriginal-tagline"></h2>
-      <a href="https://github.com/MartinPankraz/ConVista-Generic-Tile" class="btnoriginal">View on GitHub</a>
+      <a href="https://github.com/MartinPankraz/ConVista-Generic-Tile" class="btnoriginal"  target="_blank">View on GitHub</a>
       <a href="https://github.com/MartinPankraz/ConVista-Generic-Tile/zipball/master" class="btnoriginal">Download .zip</a>
       <a href="https://github.com/MartinPankraz/ConVista-Generic-Tile/tarball/master" class="btnoriginal">Download .tar.gz</a>
 	  <br>
-	  <p style="color:rgba(255, 255, 255, 0.7)">Clone link for SAP WebIDE</p><a href="https://github.com/MartinPankraz/ConVista-Generic-Tile.git" style="color:white!important;">https://github.com/MartinPankraz/ConVista-Generic-Tile.git</a>
+	  <p style="color:rgba(255, 255, 255, 0.7)">Clone link for SAP WebIDE</p><a href="https://github.com/MartinPankraz/ConVista-Generic-Tile.git" style="color:white!important;"  target="_blank">https://github.com/MartinPankraz/ConVista-Generic-Tile.git</a>
     </section>
 
 
@@ -79,15 +79,15 @@
 			      			<a id="convista-ds-sdk-visualizations" class="anchor" href="#convista-ds-sdk-visualizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2> -->
 
 			<p>Generic Fiori Tile by ConVista Consulting to enhance Fiori Launchpad Experience.</p>
-			<p>According to the SAP Fiori community you can achieve a similar solution as of HANA SP09 with the <a href="https://blogs.sap.com/2015/03/09/creating-custom-tiles-with-sap-hana-ui-integration-services-uis/">Custom App Launcher</a> tile type. However my solution does not involve programming object deployment or a HANA platform at all. So if you want to keep it simple, read on...</p>
+			<p>According to the SAP Fiori community you can achieve a similar solution as of HANA SP09 with the <a href="https://blogs.sap.com/2015/03/09/creating-custom-tiles-with-sap-hana-ui-integration-services-uis/"  target="_blank">Custom App Launcher</a> tile type. However my solution does not involve programming object deployment or a HANA platform at all. So if you want to keep it simple, read on...</p>
 		</div>
       
 
 <!--********************Image Gallery************************************************* -->
 	<div class="row normalRow">
-		<div class="col-xs-12 col-sm-6 col-md-3 ">
+		<div class="col-xs-12 col-sm-6 col-md-3">
 		  <a data-toggle="lightbox" data-gallery="example-gallery" href="images/tile_dax.png">
-		    <img src="images/tile_dax.png" alt="maps" class="img-responsive">
+		    <img src="images/tile_dax.png" alt="maps" class="img-responsive exampleImg centered">
 		  </a>
 		  <div class="desc">
 		 	 <em>DAX Live feed with trend indicator</em>
@@ -96,7 +96,7 @@
 
 		<div class="col-xs-12 col-sm-6 col-md-3">
 		  <a data-toggle="lightbox" data-gallery="example-gallery" href="images/tile_sp500.png">
-		    <img src="images/tile_sp500.png" alt="maps" class="img-responsive">
+		    <img src="images/tile_sp500.png" alt="maps" class="img-responsive exampleImg centered">
 		  </a>
 		  <div class="desc">
 		  	<em>S&P 500 Live feed with trend indicator</em>
@@ -105,7 +105,7 @@
 
 		<div class="col-xs-12 col-sm-6 col-md-3">
 		  <a data-toggle="lightbox" data-gallery="example-gallery" href="images/tile_microchart1.png">
-		    <img src="images/tile_microchart1.png" alt="maps" class="img-responsive">
+		    <img src="images/tile_microchart1.png" alt="maps" class="img-responsive exampleImg centered">
 		  </a>
 		  <div class="desc">
 		  	<em>Comparison Chart example</em>
@@ -114,7 +114,7 @@
 
 		<div class="col-xs-12 col-sm-6 col-md-3">
 		  <a data-toggle="lightbox" data-gallery="example-gallery" href="images/tile_microchart_area_trend.png">
-		    <img src="images/tile_microchart_area_trend.png" alt="maps"  class="img-responsive">
+		    <img src="images/tile_microchart_area_trend.png" alt="maps"  class="img-responsive exampleImg centered">
 		  </a>
 		  <div class="desc">
 		  	<em>Market Data Trend Chart</em>
@@ -125,8 +125,8 @@
 
 <!--********************Image Gallery end************************************************* -->
 	<div class="row text-justify">
-		<p>Generally speaking my custom tile extends the standard Fiori Dynamic Tile exposing its content to the tile configuration screen. Thanks to <a href="https://en.wikipedia.org/wiki/JSONP">jsonp</a> you can assign any service on the web as source for your content.</p>
-		<p>You can add any UI5 content that fits the tile's space. Just browse <a href="https://sapui5.hana.ondemand.com/explored.html#/sample/sap.suite.ui.microchart.sample.ColumnMicroChartInGenericTile/preview">SAPUI5 explored</a> and check the underlying XML-View code. Wrap that XML-snippet in a UI5 fragment-tag defining the necessary namespaces (e.g xmlns="sap.suite.ui.microchart") and you are good to go.</p>
+		<p>Generally speaking my custom tile extends the standard Fiori Dynamic Tile exposing its content to the tile configuration screen. Thanks to <a href="https://en.wikipedia.org/wiki/JSONP"  target="_blank">jsonp</a> you can assign any service on the web as source for your content.</p>
+		<p>You can add any UI5 content that fits the tile's space. Just browse <a href="https://sapui5.hana.ondemand.com/explored.html#/sample/sap.suite.ui.microchart.sample.ColumnMicroChartInGenericTile/preview"  target="_blank">SAPUI5 explored</a> and check the underlying XML-View code. Wrap that XML-snippet in a UI5 fragment-tag defining the necessary namespaces (e.g xmlns="sap.suite.ui.microchart") and you are good to go.</p>
 		<p>The service callback is added to a JSONModel so that you can use UI5 templates to feed the values into your custom tile dynamically during runtime. All examples used on the website use the yahoo finance API but you are not limited to that.</p>
 
 		<p>As per Fiori style guide your tiles can be rendered in two shapes. The standard tile is a square (1x1). The second option is a wide rectangle (2x1). They adapt slightly on mobile devices in total size to save space.</p>
@@ -142,8 +142,8 @@
 		<h2  class="anchors">Yahoo Query Language</h2>
 		<div class="text-justify">
 			    <p>The Yahoo Query Language (YQL) - is a sql-like language to query Yahoo's Web Services and API's such as the Yahoo Finance API. I am using the Finance API in all of my examples given below.
-				You can find more information on YQL, available API's and usage examples here: <a href="https://developer.yahoo.com/yql/">YQL</a>.</p>
-				<p>There is also a <a href="https://developer.yahoo.com/yql/console/">developer console</a> to create your API queries 
+				You can find more information on YQL, available API's and usage examples here: <a href="https://developer.yahoo.com/yql/"  target="_blank">YQL</a>.</p>
+				<p>There is also a <a href="https://developer.yahoo.com/yql/console/"  target="_blank">developer console</a> to create your API queries 
 				in a simplified environment. It makes sense to have the query right, before integrating it with my custom Fiori tile. Please note that you need to work with JSON output rather than XML because my component relies on JSON models.
 				</p>
 		</div>
@@ -180,7 +180,7 @@
 		</div>
 		
 		<h4>YQL for service URL configuration</h4>
-		<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22^GDAXI%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("^GDAXI")&format=json&env=store://datatables.org/alltableswithkeys</a>
+		<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22^GDAXI%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"  target="_blank">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("^GDAXI")&format=json&env=store://datatables.org/alltableswithkeys</a>
 		<h4>Title</h4>
 		<p>Live Market Data</p>
 		<h4>Subtitle</h4>
@@ -224,7 +224,7 @@
 			<p><em>The following properties are intended to be used with the Fiori tile configuration screen.</em></p>
 		</div>
 		<h4>YQL for service URL configuration</h4>
-		<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20in%20(%22^GDAXI%22)%20AND%20startDate=%272017-02-01%27%20AND%20endDate=%272017-03-02%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&moveYahooDates=true">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("^GDAXI") AND startDate='2017-02-01' AND endDate='2017-03-02'&format=json&env=store://datatables.org/alltableswithkeys&moveYahooDates=true</a>
+		<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20in%20(%22^GDAXI%22)%20AND%20startDate=%272017-02-01%27%20AND%20endDate=%272017-03-02%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&moveYahooDates=true"  target="_blank">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("^GDAXI") AND startDate='2017-02-01' AND endDate='2017-03-02'&format=json&env=store://datatables.org/alltableswithkeys&moveYahooDates=true</a>
 		<h4>Titel</h4>
 		<p>DAX - Market Trend</p>
 
@@ -298,7 +298,7 @@
 	<div class="row" id="formatter_functions">
 		<h2 class="anchors">Formatter Functions</h2>
 		    <p class="justify normalRow">In order to be able to derive meaning from arbitrary web service callbacks, I added some formatter functions for ease of use. You can call them on your UI5 templates as usual. See my example below or check the Configuration Examples section above for more complex applications.</p>
-			 <table class="table normalRow">
+			 <table class="table normalRow table-bordered">
 				<thead>
 					<tr>
 						<th nowrap>Function Name</th>
@@ -307,39 +307,39 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>formatDateTime</td>
+						<td><em>formatDateTime</em></td>
 						<td>Format a value to date (d MMMM HH:mm:ss) with medium style</td>
 					</tr>
 					<tr>
-						<td>formatDateShort</td>
+						<td><em>formatDateShort</em></td>
 						<td>Format a value to date (d MMMM) with short style</td>
 					</tr>
 					<tr>
-						<td>formatFloatValueColor</td>
+						<td><em>formatFloatValueColor</em></td>
 						<td>Format a float value to Neutral (value 0), Error (value < 0) and Good (value > 0)</td>
 					</tr>
 					<tr>
-						<td>formatFloatValueIndicator</td>
+						<td><em>formatFloatValueIndicator</em></td>
 						<td>Format a float value to None (value 0), Down (value < 0) and Up (value > 0)</td>
 					</tr>
 					<tr>
-						<td>formatIntValueColor</td>
+						<td><em>formatIntValueColor</em></td>
 						<td>Format a integer value to Neutral (value 0), Error (value < 0) and Good (value > 0)</td>
 					</tr>
 					<tr>
-						<td>formatIntValueIndicator</td>
+						<td><em>formatIntValueIndicator</em></td>
 						<td>Format a integer value to None (value 0), Down (value < 0) and Up (value > 0)</td>
 					</tr>
 					<tr>
-						<td>formatStringToFloat</td>
+						<td><em>formatStringToFloat</em></td>
 						<td>Format a float value to String. This is necessary for some UI5 templates.</td>
 					</tr>
 					<tr>
-						<td>formatValueToCounter</td>
+						<td><em>formatValueToCounter</em></td>
 						<td>Helper function to get x-axis values for market data to distribute them equally on the axis. It counts the values for the given values.</td>
 					</tr>
 					<tr>
-						<td>formatValueShortNumber</td>
+						<td><em>formatValueShortNumber</em></td>
 						<td>Format a value to a short number. This is used to shorten big numbers and add abbreviations like (K,M and G etc.). This was used on the market data trend chart example for instance.</td>
 					</tr>
 				</tbody>
@@ -379,7 +379,7 @@
 						Clone this GitHub repository using link below and deploy on ABAP server (Cloud Connector setup necessary for on-premise system) 
 					</p>
 					<p>
-						<a href="https://github.com/MartinPankraz/ConVista-Generic-Tile">Link to repository</a>
+						<a href="https://github.com/MartinPankraz/ConVista-Generic-Tile" target="_blank">Link to repository</a>
 					</p>
 				</div>
 				<div class="col-xs-12 col-sm-5  borderedDivs text-center">
@@ -390,7 +390,7 @@
 						Upload zipped version of the app using transaction SE38 
 					</p>
 					<p>
-						<a href="https://github.com/MartinPankraz/ConVista-Generic-Tile/releases/ConVista-Generic-Tile.zip">Link to repository</a>
+						<a href="https://github.com/MartinPankraz/ConVista-Generic-Tile/releases/ConVista-Generic-Tile.zip" target="_blank">Link to repository</a>
 					</p>
 				</div>
 			</div>
@@ -410,7 +410,7 @@
 		 			</tbody>
 		 </table> -->
 		</li>	
-		<li class="list-group-item justify"><b>2)</b> Register the new tile as a Fiori chip to make it available as a new tile type. <a href="https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/">Check directions</a></li>
+		<li class="list-group-item justify"><b>2)</b> Register the new tile as a Fiori chip to make it available as a new tile type. <a href="https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/" target="_blank">Check directions</a></li>
 		<li class="list-group-item justify"><b>3)</b> Have fun using my custom tile</li>
 		<li class="list-group-item justify">Meet me at ConVista Infoday or our world renowned carnival (traditional German costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)</li>
 	</ul>
@@ -427,16 +427,16 @@
 
 	<p class="text-center"><a href="mailto:martin.pankraz@convista.com">martin.pankraz@convista.com</a></p>
 
-	<p class="text-center"><small>This component was inspired by the following SCN blog post <a href="https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/">create-and-use-custom-tile-type</a></small></p>
+	<p class="text-center"><small>This component was inspired by the following SCN blog post <a href="https://blogs.sap.com/2016/08/23/create-and-use-custom-tile-type/" target="_blank">create-and-use-custom-tile-type</a></small></p>
 </div>
 
 <footer class="siteoriginal-footer text-center normalRow">
 	<p>
-		<a href="https://github.com/MartinPankraz">
+		<a href="https://github.com/MartinPankraz" target="_blank">
 			<img src="images/ConVista_Logo_footer.png" height="30" width="515">
 		</a>
 	</p>
-	<p><span class="siteoriginal-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span></p>
+	<p><span class="siteoriginal-footer-credits" >This page was generated by <a href="https://pages.github.com" target="_blank">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme" target="_blank">Cayman theme</a> by <a href="https://twitter.com/jasonlong" target="_blank">Jason Long</a>.</span></p>
 </footer>
 
 </div>
