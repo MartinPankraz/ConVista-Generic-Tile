@@ -6,141 +6,38 @@ sap.ui.define([
 	jQuery.sap.require("sap.ui.core.format.DateFormat");
 	jQuery.sap.require("sap.ui.core.format.NumberFormat");
 	
-	return Controller.extend("convista.com.demo.dynamictile.view.Tile", {
+	return Controller.extend("convista.com.demo.dynamictile.view.DemoController", {
 	//return Controller.extend("convista.com.demo.dynamictile.view.Tile", {
 		
 		onInit: function(){
-			var oView = this.getView(),
-                oViewData = oView.getViewData(),
-                oTileApi = oViewData.chip,
-                that = this,
-                oConfig = sap.ushell.components.tiles.utilsRT.getConfiguration(oTileApi, oTileApi.configurationUi.isEnabled(), false);
-            
-            this.navigationTargetUrl = oConfig.navigation_target_url;
-            this.bIsDataRequested = false;
-            //global counter to achieve a counter on template-based value creation
-            this.templateCounter = 0;
-            
-            var data = sap.ushell.components.tiles.utilsRT.getDataToDisplay(oConfig, {
-            	number: (oTileApi.configurationUi.isEnabled() ? 1234 : "...")
-            });
-            var oModel = new sap.ui.model.json.JSONModel({
-                config: oConfig,
-                data: data,
-                nav: {navigation_target_url: (oTileApi.configurationUi && oTileApi.configurationUi.isEnabled() ? "" : this.navigationTargetUrl)},
-                search: {
-                    display_highlight_terms: []
-                }
-            });
-            oView.setModel(oModel);
-
-			// implement configurationUi contract: setup configuration UI
-            if (oTileApi.configurationUi.isEnabled()) {
-                oTileApi.configurationUi.setUiProvider(function () {
-                    // attach configuration UI provider, which is essentially a components.tiles.dynamicapplauncher.Configuration
-                    var oConfigurationUi = sap.ushell.components.tiles.utils.getConfigurationUi(oView, "view.Configuration");
-                    oTileApi.configurationUi.attachCancel(that.onCancelConfiguration.bind(null, oConfigurationUi));
-                    oTileApi.configurationUi.attachSave(that.onSaveConfiguration.bind(null, oConfigurationUi));
-                    return oConfigurationUi;
-                });
-
-                this.getView().getContent()[0].setTooltip(
-                    sap.ushell.components.tiles.utils.getResourceBundleModel().getResourceBundle()
-                        .getText("edit_configuration.tooltip")
-                );
-            }/*else {
-                if (!oTileApi.preview || !oTileApi.preview.isEnabled()) {
-                    this.onUpdateDynamicData();
-                }
-            }*/
-            
-            // implement search contract
-            if (oTileApi.search) {
-                // split and clean keyword string (may be comma + space delimited)
-                var sKeywords = oView.getModel().getProperty("/config/display_search_keywords");
-                var aKeywords = jQuery.grep(sKeywords.split(/[, ]+/), function (n, i) { return n && n !== ""; });
-
-                // add title and subtitle (if present) to keywords for better FLP searching
-                if (oConfig.display_title_text && oConfig.display_title_text !== "" &&
-                        aKeywords.indexOf(oConfig.display_title_text) === -1) {
-                    aKeywords.push(oConfig.display_title_text);
-                }
-                if (oConfig.display_subtitle_text && oConfig.display_subtitle_text !== "" &&
-                        aKeywords.indexOf(oConfig.display_subtitle_text) === -1) {
-                    aKeywords.push(oConfig.display_subtitle_text);
-                }
-                if (oConfig.display_info_text && oConfig.display_info_text !== "" &&
-                        aKeywords.indexOf(oConfig.display_info_text) === -1) {
-                    aKeywords.push(oConfig.display_info_text);
-                }
-
-                // defined in search contract:
-                oTileApi.search.setKeywords(aKeywords);
-                oTileApi.search.attachHighlight(
-                    function (aHighlightWords) {
-                        // update model for highlighted search term
-                        oView.getModel().setProperty("/search/display_highlight_terms", aHighlightWords);
-                    }
-                );
-            }
-            
-            // implement bag update handler
-            if (oTileApi.bag && oTileApi.bag.attachBagsUpdated) {
-                // is only called by the FLP for bookmark tiles which have been updated via bookmark service
-                oTileApi.bag.attachBagsUpdated(function (aUpdatedBagIds) {
-                    if (aUpdatedBagIds.indexOf("tileProperties") > -1) {
-                        sap.ushell.components.tiles.utils._updateTilePropertiesTexts(oView, oTileApi.bag.getBag('tileProperties'));
-                    }
-                });
-            }
-
-            // implement preview contract
-            if (oTileApi.preview) {
-                oTileApi.preview.setTargetUrl(this.navigationTargetUrl);
-                oTileApi.preview.setPreviewIcon(oConfig.display_icon_url);
-                oTileApi.preview.setPreviewTitle(oConfig.display_title_text);
-            }
-
-            // implement refresh contract
-            if (oTileApi.refresh) {
-                oTileApi.refresh.attachRefresh(this.refreshHandler.bind(null, this));
-            }
-
-            // attach the refresh handler also for the visible contract, as we would like
-            // on setting visible to true, to directly go and call the oData call
-            if (oTileApi.visible) {
-                oTileApi.visible.attachVisible(this.visibleHandler.bind(this));
-            }
-			
-			//Tile setup complete -> Custom Coding
-			//***************************************************************************//
-			//***************************************************************************//
 			this.tileContainer = this.getView().getContent()[0];
-			var oTileContainerModel = new sap.ui.model.json.JSONModel();
-			this.tileContent = null;
-			//load initial default content
-			if(!oConfig.display_tile_content_xml || oConfig.display_tile_content_xml === ""){
-				this.tileContent = sap.ui.xmlfragment("view.MicroChartDemo",this);//convista.com.demo.dynamictile.view.MicroChartDemo	
-			}else{
-				//assign xml fragment as given in configuration screen
-				try{
-					this.tileContent = sap.ui.xmlfragment({
-						fragmentContent:oConfig.display_tile_content_xml
-					}, this);
-				}catch(e){
-					jQuery.sap.log.error(e);
-					jQuery.sap.log.error("Parsing error for given XML Fragment. Did you add the names spaces and fragment xml wrapper?");
-				}
-			}
-			this.tileContainer.setModel(oTileContainerModel);
+			this.tileContainer.setFrameType("TwoByOne");
 			
-			this.tileContainer.setHeader(oConfig.display_title_text);
-			this.tileContainer.setSubheader(oConfig.display_subtitle_text);
-			//finally add content to generic tile
-			var currentContent = this.tileContainer.getTileContent()[0];
-			currentContent.setContent(this.tileContent);
-			currentContent.setFooter(oConfig.display_footer);
-			//currentContent.addStyleClass("ccChartSize");
+			// Set TwoByOne tile with wide chart
+			// this.getView().getContent()[0].getTileContent()[0].setFrameType("TwoByOne");
+			// this.tileContent = sap.ui.xmlfragment("convista.com.demo.dynamictile.view.DeltaChartDemo",this);
+			// this.getView().getContent()[0].getTileContent()[0].setContent(this.tileContent);
+			
+			// Set TwoByOne tile with two charts
+			this.tileContent = sap.ui.xmlfragment("convista.com.demo.dynamictile.view.DeltaChartDemo",this);
+			this.getView().getContent()[0].getTileContent()[0].setContent(this.tileContent);
+			this.tileSecondContent = sap.ui.xmlfragment("convista.com.demo.dynamictile.view.MicroChartDemo",this);
+			this.getView().getContent()[0].addTileContent(new sap.m.TileContent({content:this.tileSecondContent}));
+			this.getView().getContent()[0].getTileContent()[1].setFooter("Compare across regions");
+			
+			// Header, subheader and footer for both kind of tiles
+			this.tileContainer.setHeader("Revenue Dynamics");
+			this.tileContainer.setSubheader("Expenses by Region");
+			this.getView().getContent()[0].getTileContent()[0].setFooter("Actual and Target");
+			
+		},
+		onPressTile: function(oEvent){
+			var sFrame = this.getView().getContent()[0].getFrameType();
+			/*if(sFrame === "OneByOne"){
+				this.getView().getContent()[0].setFrameType("TwoByOne");
+			}else{
+				this.getView().getContent()[0].setFrameType("OneByOne");
+			}*/
 		},
 		
 		onPress: function(oEvent){
@@ -187,11 +84,6 @@ sap.ui.define([
                     display_icon_url : oModel.getProperty("/config/display_icon_url"),
                     // display_number_unit : oModel.getProperty("/config/display_number_unit"),
                     display_tile_content_xml : oModel.getProperty("/config/display_tile_content_xml"),
-                    
-                    // properties for a TwoByOne tile
-                    display_second_tile_content_xml : oModel.getProperty("/config/display_second_tile_content_xml"),
-                    display_second_footer: oModel.getProperty("/config/display_second_footer"),
-                    
                     display_footer : oModel.getProperty("/config/display_footer"),
                     service_url: oModel.getProperty("/config/service_url"),
                     service_refresh_interval: oModel.getProperty("/config/service_refresh_interval"),

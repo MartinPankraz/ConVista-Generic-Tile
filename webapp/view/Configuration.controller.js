@@ -71,6 +71,11 @@ sap.ui.define([
             oModel.setProperty("/enabled", value);
             sap.ushell.components.tiles.utils.checkInput(this.getView(), oEvent);
         },
+        // change enabled status if 2x1 box checked
+        onFrameTypeBoxCheck: function(oEvent){
+        	
+        },
+        
         // forward icon value help request to utils
         onIconValueHelpRequest : function (oEvent) {
             //Third parameter is to differentiate whether it's Tile Actions icon field or general icon field. If it's true, then it's tile actions icon field, else general icon field.
