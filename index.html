@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.css" type='text/css'>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.js"></script>
 	<link rel="stylesheet" href="stylesheets/customStyles.css" type="text/css">
 
 	<!--<script>
@@ -40,24 +42,24 @@
   	    </div>
   	    <div class="collapse navbar-collapse" id="myNavbar">
   	    	<ul class="nav navbar-nav">
-		        <li><a href="#section1">Home</a></li>
-		        <li><a href="#section2">Prerequisites</a></li>
-		        <li><a href="#section3">Yahoo Query Language</a></li>
+		        <li><a href="#home">Home</a></li>
+		        <li><a href="#prerequisites">Prerequisites</a></li>
+		        <li><a href="#yql">Yahoo Query Language</a></li>
 		        <li class="dropdown">
 		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <span class="caret"></span></a>
 		        		<ul class="dropdown-menu">
-		        			<li ><a href="#section4">Configuration Examples</a></li>
-		        			<li ><a href="#section4-1">Simple stock rate display</a></li>
-		        			<li ><a href="#section4-2">More complex binding</a></li>
+		        			<li ><a href="#configuration_examples">Configuration Examples</a></li>
+		        			<li ><a href="#simple_stock_rate_display">Simple stock rate display</a></li>
+		        			<li ><a href="#complex_binding">More complex binding</a></li>
 		        		</ul>
 		        </li>
-		        <li><a href="#section5">Formatter Functions</a></li>
-		        <li><a href="#section6">Installation</a></li>
+		        <li><a href="#formatter_functions">Formatter Functions</a></li>
+		        <li><a href="#installation">Installation</a></li>
 		      </ul>
   	    </div>
   	  </div>
   	</nav>
-    <section class="pageoriginal-header" id="section1">
+    <section class="pageoriginal-header" id="home">
 	  <img src="images/ConVista_Logo_RGB_blue.png" height="102" width="293">
 	  <br>
       <h1 class="projectoriginal-name">Generic Fiori Tile</h1>
@@ -83,8 +85,8 @@
 
 <!--********************Image Gallery************************************************* -->
 	<div class="row normalRow">
-		<div class="col-xs-6 col-sm-3 ">
-		  <a target="_blank" href="images/tile_dax.png">
+		<div class="col-xs-12 col-sm-6 col-md-3 ">
+		  <a data-toggle="lightbox" data-gallery="example-gallery" href="images/tile_dax.png">
 		    <img src="images/tile_dax.png" alt="maps" class="img-responsive">
 		  </a>
 		  <div class="desc">
@@ -92,8 +94,8 @@
 		  </div>
 		</div>
 
-		<div class="col-xs-6 col-sm-3">
-		  <a target="_blank" href="images/tile_sp500.png">
+		<div class="col-xs-12 col-sm-6 col-md-3">
+		  <a data-toggle="lightbox" data-gallery="example-gallery" href="images/tile_sp500.png">
 		    <img src="images/tile_sp500.png" alt="maps" class="img-responsive">
 		  </a>
 		  <div class="desc">
@@ -101,8 +103,8 @@
 		  </div>
 		</div>
 
-		<div class="col-xs-6 col-sm-3">
-		  <a target="_blank" href="images/tile_microchart1.png">
+		<div class="col-xs-12 col-sm-6 col-md-3">
+		  <a data-toggle="lightbox" data-gallery="example-gallery" href="images/tile_microchart1.png">
 		    <img src="images/tile_microchart1.png" alt="maps" class="img-responsive">
 		  </a>
 		  <div class="desc">
@@ -110,8 +112,8 @@
 		  </div>
 		</div>
 
-		<div class="col-xs-6 col-sm-3">
-		  <a target="_blank" href="images/tile_microchart_area_trend.png">
+		<div class="col-xs-12 col-sm-6 col-md-3">
+		  <a data-toggle="lightbox" data-gallery="example-gallery" href="images/tile_microchart_area_trend.png">
 		    <img src="images/tile_microchart_area_trend.png" alt="maps"  class="img-responsive">
 		  </a>
 		  <div class="desc">
@@ -130,13 +132,13 @@
 		<p>As per Fiori style guide your tiles can be rendered in two shapes. The standard tile is a square (1x1). The second option is a wide rectangle (2x1). They adapt slightly on mobile devices in total size to save space.</p>
 	</div>
 	
-	<div class="row text-center" id="section2">
+	<div class="row text-center" id="prerequisites">
 		<h2  class="anchors">Prerequisites</h2>
 		    <p >NetWeaver Gateway with active Fiori Launchpad</p>
 			<p >UI5 library version 1.38.5 +</p>
 	</div>
 	
-	<div class="row" id="section3">
+	<div class="row" id="yql">
 		<h2  class="anchors">Yahoo Query Language</h2>
 		<div class="text-justify">
 			    <p>The Yahoo Query Language (YQL) - is a sql-like language to query Yahoo's Web Services and API's such as the Yahoo Finance API. I am using the Finance API in all of my examples given below.
@@ -147,19 +149,35 @@
 		</div>
 	</div>
 
-	<div class="row" id="section4">
+	<div class="row" id="configuration_examples">
 		<h2 class="anchors">Configuration Examples</h2>
 			<p class="justify normalRow">The following properties are intended to be used with the Fiori tile configuration screen.</p>
-			<div>
-				<img src="images/tile_config_screen_example.png" alt="Fiori config screen" class="img-responsive centered">
+			<div class="row">
+				<a data-toggle="lightbox" href="images/tile_config_screen_example.png">
+					<img src="images/tile_config_screen_example.png" alt="Fiori config screen" class="img-responsive centered desktop">
+				</a>
+				<a data-toggle="lightbox" data-gallery="config-gallery" href="images/tile_config_screen_example_mobile_1.png">
+					<img src="images/tile_config_screen_example_mobile_1.png" alt="Fiori config screen1" class="img-responsive centered mobile">
+				</a>
+				<a data-toggle="lightbox" data-gallery="config-gallery" href="images/tile_config_screen_example_mobile_2.png">
+					<img src="images/tile_config_screen_example_mobile_2.png" alt="Fiori config screen2" class="img-responsive centered mobile">
+				</a>
+				<a data-toggle="lightbox" data-gallery="config-gallery" href="images/tile_config_screen_example_mobile_3.png">
+					<img src="images/tile_config_screen_example_mobile_3.png" alt="Fiori config screen3" class="img-responsive centered mobile">
+				</a>
 			</div>
 	</div>
 
-	<div class="row" id="section4-1">
+	<div class="row" id="simple_stock_rate_display">
 		<h3  class="anchors">Simple stock rate display (DAX symbol GDAXI)</h3>
-	    <p class="justify">Value loaded from Yahoo Finance API in json format. Check first example picture "DAX live feed with trend indicator" above for reference.</p>
-		
-		<img src="images/tile_dax.png" alt="maps" width="150"/>
+	    
+		<a data-toggle="lightbox"  href="images/tile_dax.png">
+			<img class="centered initialRow" src="images/tile_dax.png" alt="maps" width="250"/>
+		</a>
+		<div class="text-center">
+			<p><em>Value loaded from Yahoo Finance API in json format. </em></p>
+			<p><em>Check first example picture "DAX live feed with trend indicator" above for reference.</em></p>
+		</div>
 		
 		<h4>YQL for service URL configuration</h4>
 		<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22^GDAXI%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("^GDAXI")&format=json&env=store://datatables.org/alltableswithkeys</a>
@@ -196,12 +214,15 @@
 					  <pre><code>{"path":"/query/created", "formatter":".formatDateTime"}</code></pre>
 					
 	</div>
-	<div class="row" id="section4-2">
+	<div class="row" id="complex_binding">
 		<h3  class="anchors">More complex binding to create trend chart from historic stock values (DAX symbol GDAXI)</h3>
-		<p class="justify">Check last example picture from image gallery "Market Data Trend Chart" above for reference. The following properties are intended to be used with the Fiori tile configuration screen.</p>
-		
-		<img src="images/tile_microchart_area_trend.png" alt="microchart example" width="150">
-		
+		<a data-toggle="lightbox"  href="images/tile_microchart_area_trend.png">
+			<img class="centered initialRow" src="images/tile_microchart_area_trend.png" alt="microchart example" width="250">
+		</a>
+		<div class="text-center">
+			<p><em>Check last example picture from image gallery "Market Data Trend Chart" above for reference. </em></p>
+			<p><em>The following properties are intended to be used with the Fiori tile configuration screen.</em></p>
+		</div>
 		<h4>YQL for service URL configuration</h4>
 		<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20in%20(%22^GDAXI%22)%20AND%20startDate=%272017-02-01%27%20AND%20endDate=%272017-03-02%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&moveYahooDates=true">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("^GDAXI") AND startDate='2017-02-01' AND endDate='2017-03-02'&format=json&env=store://datatables.org/alltableswithkeys&moveYahooDates=true</a>
 		<h4>Titel</h4>
@@ -274,7 +295,7 @@
 					<p class="justify">Complex template for text property of footer. It uses the JSONModel path for the created date of Yahoo API callback and the date formatter function.</p>
 	</div>
 
-	<div class="row" id="section5">
+	<div class="row" id="formatter_functions">
 		<h2 class="anchors">Formatter Functions</h2>
 		    <p class="justify normalRow">In order to be able to derive meaning from arbitrary web service callbacks, I added some formatter functions for ease of use. You can call them on your UI5 templates as usual. See my example below or check the Configuration Examples section above for more complex applications.</p>
 			 <table class="table normalRow">
@@ -342,7 +363,7 @@
 
 	</div>
 
-<div class="row" id="section6">
+<div class="row" id="installation">
 	<h2 class="anchors">Installation</h2>
 
 	<ul id="installationid" class="list-group initialRow">
@@ -440,6 +461,11 @@
   	       window.location.hash = hash;
   	     });
 
+  	});
+
+  	$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+  	    event.preventDefault();
+  	    $(this).ekkoLightbox();
   	});
   </script>
   </body>

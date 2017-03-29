@@ -11,6 +11,18 @@ body{
 	margin:auto;
 }
 
+/* LIGHTBOX STYLING */
+.ekko-lightbox-nav-overlay a span {
+    padding: 0 15px;
+}
+.ekko-lightbox-nav-overlay a {
+    color: #337ab7;
+}
+.modal-open {
+    overflow-y: scroll;
+}
+
+
 h2.anchors{
   font-size: 35px;
   color: #005696;
@@ -47,6 +59,12 @@ pre{
 	padding: 10px 20px;
 	color:#2f6f9f;
 	font-size: 14px;
+	overflow-x: auto;
+}
+
+pre code {
+    overflow-wrap: normal;
+    white-space: pre;
 }
 
 
@@ -148,5 +166,19 @@ pre{
   .borderedDivs{
   	margin-right: 0px;
   	margin-bottom: 20px;
+  }
+}
+
+.img-responsive.mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .img-responsive.desktop {
+    display: none;
+  }
+  .img-responsive.mobile {
+    display: block;
+    margin-bottom: 15px;
   }
 }
