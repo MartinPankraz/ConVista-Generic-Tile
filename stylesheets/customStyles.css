@@ -1,0 +1,152 @@
+/* CUSTOM CSS */
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+.borderedDivs{
+	border: 1px #005696 dotted;
+	margin-left: 5%;
+}
+.centered{
+	display: block;
+	margin:auto;
+}
+
+h2.anchors{
+  font-size: 35px;
+  color: #005696;
+  text-align: center;
+  margin: 20px 0 20px 0;
+  border-bottom: 1px #005696 dotted;
+}
+
+h3.anchors{
+	font-size: 25px;
+	color: #005696;
+	text-align: center;
+	margin: 50px 0 20px 0;
+}
+
+h4{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.initialRow{
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+.list-group-item {
+    border: none;
+}
+
+.normalRow{
+	margin-bottom: 25px;
+}
+
+pre{
+	padding: 10px 20px;
+	color:#2f6f9f;
+	font-size: 14px;
+}
+
+
+/* NAVBAR STYLING */
+.navbar-inverse {
+  background-color: #3aaadc;
+  border-color: transparent;
+}
+.navbar-inverse .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > li > .dropdown-menu {
+  background-color: #3aaadc;
+}
+.navbar-inverse .navbar-nav > li > .dropdown-menu > li > a {
+  color: #ecf0f1;
+}
+.navbar-inverse .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-inverse .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #ffffff;
+  background-color: #005696;
+}
+.navbar-inverse .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #005696;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  background-color: #005696;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #005696;
+}
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #005696;
+}
+.navbar-inverse .navbar-toggle {
+  border-color: #ffffff;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #005696;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-inverse .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-inverse .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #005696;
+  }
+}
+
+@media (max-width: 767px) {
+  .paddingCellphone{
+  	padding:10%;
+  }
+  .borderedDivs{
+  	margin-right: 0px;
+  	margin-bottom: 20px;
+  }
+}
