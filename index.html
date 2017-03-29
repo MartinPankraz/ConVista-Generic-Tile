@@ -16,6 +16,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.css" type='text/css'>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="stylesheets/customStyles.css" type="text/css">
 
 	<!--<script>
@@ -38,11 +39,11 @@
   	            <span class="icon-bar"></span>
   	            <span class="icon-bar"></span>                        
   	      </button>
-  	      <a class="navbar-brand" href="#">Convista</a>
+  	      <a class="navbar-brand" href="#home" id="toTopButton">Convista</a>
   	    </div>
   	    <div class="collapse navbar-collapse" id="myNavbar">
   	    	<ul class="nav navbar-nav">
-		        <li><a href="#home">Home</a></li>
+		        <li><a href="#introduction">Introduction</a></li>
 		        <li><a href="#prerequisites">Prerequisites</a></li>
 		        <li><a href="#yql">Yahoo Query Language</a></li>
 		        <li class="dropdown">
@@ -59,7 +60,8 @@
   	    </div>
   	  </div>
   	</nav>
-    <section class="pageoriginal-header" id="home">
+
+    <section class="pageoriginal-header" >
 	  <img src="images/ConVista_Logo_RGB_blue.png" height="102" width="293">
 	  <br>
       <h1 class="projectoriginal-name">Generic Fiori Tile</h1>
@@ -73,7 +75,7 @@
 
 
 	
-	<div class="container paddingCellphone">
+	<div class="container paddingCellphone" id="introduction">
 		<div class="row initialRow text-justify">
 			      <!-- <h2  class="anchors">
 			      			<a id="convista-ds-sdk-visualizations" class="anchor" href="#convista-ds-sdk-visualizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2> -->
@@ -443,6 +445,19 @@
   
 
   <script type="text/javascript">
+  	$("#toTopButton").on("click", function(e){
+  		e.preventDefault();
+  		var hash = "#home"
+
+  		$('html, body').animate({
+  		    scrollTop: 0
+  		  }, '1000', function(){
+  		    window.location.hash = hash;
+  		  });
+
+  	})
+
+
   	$("#myNavbar ul li a[href^='#']").on('click', function(e) {
 
   	   // prevent default anchor click behavior
