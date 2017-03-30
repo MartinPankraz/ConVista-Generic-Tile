@@ -1,14 +1,7 @@
 <core:FragmentDefinition xmlns="sap.suite.ui.microchart" xmlns:core="sap.ui.core">
-<ComparisonMicroChart scale="M">
-						<data>
-							<ComparisonMicroChartData title="Americas"
-								value="234" color="Good" />
-							<ComparisonMicroChartData title="EMEA"
-								value="97" color="Error" />
-							<ComparisonMicroChartData title="APAC"
-								value="197" color="Critical" />
-						</data>
-					</ComparisonMicroChart>
+<DeltaMicroChart value1="-105"
+						value2="-98" title1="May 2014" title2="Apr 2014" displayValue1="-105 Mio"
+						displayValue2="-98 Mio" deltaDisplayValue="7 Mio" color="Error" />
 <!--	<ColumnMicroChart>
 		<leftTopLabel>
 			<ColumnMicroChartLabel label="June 1" />
