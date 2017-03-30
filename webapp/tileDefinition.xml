@@ -15,9 +15,6 @@
 		<consume id="configuration">
             <parameters>
                 <parameter name="tileConfiguration"></parameter>
-                <!-- Activate this for TwoByOne tiles
-                <parameter name="col">2</parameter>
-                -->
             </parameters>
         </consume>
         <consume id="preview" />
@@ -31,4 +28,3 @@
         <consume id="actions" />
 	</contracts>
 </chip>
-                
