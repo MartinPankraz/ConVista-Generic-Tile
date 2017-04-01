@@ -10,6 +10,9 @@ sap.ui.define([
 	//return Controller.extend("convista.com.demo.dynamictile.view.Tile", {
 		
 		onInit: function(){
+			var sRootPath = jQuery.sap.getModulePath("view");
+			jQuery.sap.includeStyleSheet(sRootPath+"/css/style.css");
+			
 			var oView = this.getView(),
                 oViewData = oView.getViewData(),
                 oTileApi = oViewData.chip,
@@ -120,8 +123,13 @@ sap.ui.define([
 			this.tileContent = null;
 			//load initial default content
 			if(!oConfig.display_tile_content_xml || oConfig.display_tile_content_xml === ""){
-				this.tileContent = sap.ui.xmlfragment("view.MicroChartDemo",this);//convista.com.demo.dynamictile.view.MicroChartDemo	
-			}else{
+				if(oConfig.background_image !== ""){
+					this.tileContent = "";
+				}else{
+					this.tileContent = sap.ui.xmlfragment("view.MicroChartDemo",this);//convista.com.demo.dynamictile.view.MicroChartDemo		
+				}
+			}
+			else{
 				//assign xml fragment as given in configuration screen
 				try{
 					this.tileContent = sap.ui.xmlfragment({
@@ -138,8 +146,12 @@ sap.ui.define([
 			this.tileContainer.setSubheader(oConfig.display_subtitle_text);
 			//finally add content to generic tile
 			var currentContent = this.tileContainer.getTileContent()[0];
-			currentContent.setContent(this.tileContent);
-			currentContent.setFooter(oConfig.display_footer);
+			if(oConfig.background_image){
+				this.tileContainer.setBackgroundImage(oConfig.background_image);	
+			}
+			if(this.tileContent !== ""){
+				currentContent.setContent(this.tileContent);	
+			}
 			//currentContent.addStyleClass("ccChartSize");
 		},
 		
@@ -187,6 +199,7 @@ sap.ui.define([
                     display_icon_url : oModel.getProperty("/config/display_icon_url"),
                     // display_number_unit : oModel.getProperty("/config/display_number_unit"),
                     display_tile_content_xml : oModel.getProperty("/config/display_tile_content_xml"),
+                    background_image : oModel.getProperty("/config/background_image"),
                     display_footer : oModel.getProperty("/config/display_footer"),
                     service_url: oModel.getProperty("/config/service_url"),
                     service_refresh_interval: oModel.getProperty("/config/service_refresh_interval"),
