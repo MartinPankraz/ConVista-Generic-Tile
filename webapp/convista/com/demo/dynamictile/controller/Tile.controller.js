@@ -149,6 +149,9 @@ sap.ui.define([
 			if(oConfig.background_image){
 				this.tileContainer.setBackgroundImage(oConfig.background_image);	
 			}
+			if(oConfig.display_icon_url){
+				this.tileContainer.setHeaderImage(oConfig.display_icon_url);	
+			}
 			if(this.tileContent !== ""){
 				currentContent.setContent(this.tileContent);	
 			}
