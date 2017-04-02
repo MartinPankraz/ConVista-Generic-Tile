@@ -12,9 +12,9 @@
 				tooltip="{i18n>configuration.display_subtitle_text.tooltip}" editable="{/config/isLocaleSuitable}"/>
 			<Label text="{i18n>footerText}"/>
 			<Input id="footerInput" value="{/config/display_footer}" enabled="{/config/editable}" editable="{/config/isLocaleSuitable}"/>
-			<Label text="Type (xml)"/>
+			<Label text="{i18n>tileContent}"/>
 			<TextArea value="{/config/display_tile_content_xml}" rows="10"/>
-			<Label text="Background Image"/>
+			<Label text="{i18n>backgroundImage}"/>
 			<Input id="backgroundImageInput" value="{/config/background_image}" enabled="{/config/editable}" editable="{/config/isLocaleSuitable}"/>
 			<Label text="{i18n>configuration.keywords}"/>
 			<Input id="keywordsInput" value="{/config/display_search_keywords}" enabled="{/config/editable}" width="100%"
