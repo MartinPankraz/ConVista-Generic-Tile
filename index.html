@@ -55,6 +55,7 @@
 		        		</ul>
 		        </li>
 		        <li><a href="#formatter_functions">Formatter Functions</a></li>
+				<li><a href="#styling">Styling</a></li>
 		        <li><a href="#installation">Installation</a></li>
 		      </ul>
   	    </div>
@@ -156,7 +157,7 @@
 
 	<div class="row" id="configuration_examples">
 		<h2 class="anchors">Configuration Examples</h2>
-			<p class="justify normalRow">The following properties are intended to be used with the Fiori tile configuration screen.</p>
+			<p class="justify normalRow">The following properties are intended to be used with the Fiori tile configuration screen. The Screen for the two-by-one tile differs slightly.</p>
 			<div class="row">
 				<a data-toggle="lightbox" href="images/tile_config_screen_example.png">
 					<img src="images/tile_config_screen_example.png" alt="Fiori config screen" class="img-responsive centered desktop">
@@ -367,7 +368,13 @@
 			<!-- END OF PRE TAG -->  
 
 	</div>
-
+	
+<div class="row" id="styling">
+	<h2 class="anchors">Styling</h2>
+		<p class="justify normalRow">To style your tiles you should rely on the Fiori Launchpad Theme Designer to make sure to achieve a common look&feel across the whole launchpad. You can access the designer like so: http://[server]:[port]/sap/bc/theming/theme-designer/index.html.</p>	
+		<p class="justify normalRow">A list of standard theme CSS classes can be found <a href="https://sapui5.hana.ondemand.com/#docs/guide/91a4946b0dcf4356aaaedc4e502864f4.html">here</a></p>
+		<p class="justify normalRow">For margins and spacing check out this <a href="https://help.sap.com/saphelp_uiaddon10/helpdata/en/77/7168ffe8324873973151dae2356d1c/content.htm">link</a></p>
+		<p class="justify normalRow">You should always rely on the standard theming classes to avoid design clashes. But if you really can't help it, I provided a style sheet for you to add your own classes. There are three examples <i>ccTextWhite</i>, <i>ccTextBold</i> and <i>ccTextBig</i>. These were used to create the "minions" tile example. Please note that the styling you apply on the XML box of the configuration screen won't impact the title or the footer. This affects only the tile content.</p>
 <div class="row" id="installation">
 	<h2 class="anchors">Installation</h2>
 
