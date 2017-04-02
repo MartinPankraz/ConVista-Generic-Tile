@@ -1,7 +1,7 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"convista/com/demo/dynamictile/model/models"
+	"./convista/com/demo/dynamictile/model/models"
 ], function(UIComponent, Device, models) {
 	"use strict";
 

@@ -6,11 +6,11 @@ sap.ui.define([
 	jQuery.sap.require("sap.ui.core.format.DateFormat");
 	jQuery.sap.require("sap.ui.core.format.NumberFormat");
 	
-	return Controller.extend("view.Tile", {
-	//return Controller.extend("convista.com.demo.dynamictile.view.Tile", {
+	//return Controller.extend("view.Tile", {
+	return Controller.extend("convista.com.demo.dynamictile.controller.Tile", {
 		
 		onInit: function(){
-			var sRootPath = jQuery.sap.getModulePath("view");
+			var sRootPath = jQuery.sap.getModulePath("convista.com.demo.dynamictile");
 			jQuery.sap.includeStyleSheet(sRootPath+"/css/style.css");
 			
 			var oView = this.getView(),
@@ -41,7 +41,7 @@ sap.ui.define([
             if (oTileApi.configurationUi.isEnabled()) {
                 oTileApi.configurationUi.setUiProvider(function () {
                     // attach configuration UI provider, which is essentially a components.tiles.dynamicapplauncher.Configuration
-                    var oConfigurationUi = sap.ushell.components.tiles.utils.getConfigurationUi(oView, "view.Configuration");
+                    var oConfigurationUi = sap.ushell.components.tiles.utils.getConfigurationUi(oView, "convista.com.demo.dynamictile.view.Configuration");
                     oTileApi.configurationUi.attachCancel(that.onCancelConfiguration.bind(null, oConfigurationUi));
                     oTileApi.configurationUi.attachSave(that.onSaveConfiguration.bind(null, oConfigurationUi));
                     return oConfigurationUi;
@@ -126,7 +126,7 @@ sap.ui.define([
 				if(oConfig.background_image !== ""){
 					this.tileContent = "";
 				}else{
-					this.tileContent = sap.ui.xmlfragment("view.MicroChartDemo",this);//convista.com.demo.dynamictile.view.MicroChartDemo		
+					this.tileContent = sap.ui.xmlfragment("convista.com.demo.dynamictile.view.MicroChartDemo",this);//convista.com.demo.dynamictile.view.MicroChartDemo		
 				}
 			}
 			else{

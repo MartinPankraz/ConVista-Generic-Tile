@@ -3,7 +3,7 @@
 	<implementation>
 		<sapui5>
 			<basePath>./</basePath>
-			<viewName>view/Tile.view.xml</viewName>
+			<viewName>convista.com.demo.dynamictile/view.Tile.view.xml</viewName>
 		</sapui5>
 	</implementation>
 	<appearance>
