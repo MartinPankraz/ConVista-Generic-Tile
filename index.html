@@ -52,6 +52,7 @@
 		        			<li ><a href="#configuration_examples">Configuration Examples</a></li>
 		        			<li ><a href="#simple_stock_rate_display">Simple stock rate display</a></li>
 		        			<li ><a href="#complex_binding">More complex binding</a></li>
+		        			<li ><a href="#two_by_one_configuration">TwoByOne configuration</a></li>
 		        		</ul>
 		        </li>
 		        <li><a href="#formatter_functions">Formatter Functions</a></li>
@@ -362,17 +363,76 @@
 	&lt;/AreaMicroChart&gt;
 &lt;/core:FragmentDefinition&gt;
 </code></pre>
-					<!-- END OF PRE TAG -->  
-					<h4>Footer Text</h4>
-					<p class="justify">Complex template for text property of footer. It uses the JSONModel path for the created date of Yahoo API callback and the date formatter function.</p>
-	
-			<h3  class="anchors">Things to consider for 2x1 Configuration</h3>
-			<p class="justify normalRow">You can switch in between two display modes. Either you have one wide object (e.g. a chart) or you have two smaller objects next to each other. For the latter option you get an additional Service URL input as well as individual footer texts. If you don't fill the second service URL, the first one will be used for the second object and footer as well.</p>
-			<p class="justify normalRow">In order to avoid SAPUI5 model problems I introduced a named model for the second object. That way model path overlaps are avoided. This means you need to prefix your paths to access the second API URL values with <b>secondAPI</b>. An example could look like this:</p>
+					<!-- END OF PRE TAG -->  	
+	</div>
+
+	<div class="row normalRow" id="two_by_one_configuration">
+		<h3  class="anchors">2x1 Tile Configuration</h3>
+		<a data-toggle="lightbox"  href="images/tile_stock_compare.png">
+			<img class="centered initialRow tileWide" src="images/tile_stock_compare.png" alt="microchart example">
+		</a>
+		<div class="text-center normalRow">
+			<p><em>ADD CHART CAPTION</em></p>
+		</div>
+
+		<p class="justify normalRow">You can switch in between two display modes. Either you have one wide object (e.g. a chart) or you have two smaller objects next to each other. For the latter option you get an additional Service URL input as well as individual footer texts. If you don't fill the second service URL, the first one will be used for the second object and footer as well.</p>
+		<p class="justify normalRow">In order to avoid SAPUI5 model problems I introduced a named model for the second object. That way model path overlaps are avoided. This means you need to prefix your paths to access the second API URL values with <b>secondAPI</b>. An example could look like this:</p>
 <pre><code>{
 	path:'<b>secondAPI></b>/query/results/quote/0/Close',
 	formatter:'.formatValueShortNumber'
 }</code></pre>
+		
+		<h4>CONFIGURATION EXAMPLE</h4>
+		<p class="justify normalRow">ADD DESCRIPTION TO CONFIGURATION 2X1</p>
+		<div class="row normalRow">
+			<a data-toggle="lightbox" href="images/tile_config_screen_example.png">
+				<img src="images/tile_config_screen_example.png" alt="Fiori config screen" class="img-responsive centered desktop">
+			</a>
+			<a data-toggle="lightbox" data-gallery="config-2by1-gallery" href="images/tile_config_screen_example_mobile_1.png">
+				<img src="images/tile_config_screen_example_mobile_1.png" alt="Fiori config screen1" class="img-responsive centered mobile">
+			</a>
+			<a data-toggle="lightbox" data-gallery="config-2by1-gallery" href="images/tile_config_screen_example_mobile_2.png">
+				<img src="images/tile_config_screen_example_mobile_2.png" alt="Fiori config screen2" class="img-responsive centered mobile">
+			</a>
+			<a data-toggle="lightbox" data-gallery="config-2by1-gallery" href="images/tile_config_screen_example_mobile_3.png">
+				<img src="images/tile_config_screen_example_mobile_3.png" alt="Fiori config screen3" class="img-responsive centered mobile">
+			</a>
+		</div>
+
+			<h4>YQL for service URL configuration</h4>
+			<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20in%20(%22^GDAXI%22)%20AND%20startDate=%272017-02-01%27%20AND%20endDate=%272017-03-02%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&moveYahooDates=true"  target="_blank">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("^GDAXI") AND startDate='2017-02-01' AND endDate='2017-03-02'&format=json&env=store://datatables.org/alltableswithkeys&moveYahooDates=true</a>
+			<p>
+			<p>Please note that the custom parameter <b>moveYahooDates=true</b> takes care of moving the initial dates of the API call forward maintaining the same spread. Check method <i>getMovingDateInterval</i> on the Tile controller for details.</p>
+			<h4>Titel</h4>
+			<p>ADD TITLE</p>
+
+			<h4>Subtitel</h4>
+			<p class="justify">ADD SUBTITLE DESCRIPTION</p>
+			  <pre><code>add code</code></pre>
+			
+			<h4>Type (xml)</h4> 
+			<!-- pre tag preserves spaces, DO NOT MOVE OR INDENT THIS CODE -->  
+	<pre>
+		<code>
+		add code here!
+		</code>
+	</pre>
+			<h4>Type (xml) of second chart</h4> 
+			<!-- pre tag preserves spaces, DO NOT MOVE OR INDENT THIS CODE -->  
+	<pre>
+		<code>
+		add code here!
+		</code>
+	</pre>
+	
+	<h4>Footer Text</h4>
+	<p class="justify">ADD DESCRIPTION</p>
+	  <pre><code>ADD CODE</code></pre>
+
+	  <h4>SECOND FOOTER TEXT</h4>
+	  <p class="justify">ADD DESCRIPTION</p>
+	    <pre><code>ADD CODE</code></pre>
+
 	</div>
 
 	<div class="row" id="formatter_functions">
@@ -446,8 +506,8 @@
 <div class="row" id="styling">
 	<h2 class="anchors">Styling</h2>
 		<p class="justify normalRow">To style your tiles you should rely on the Fiori Launchpad Theme Designer to make sure to achieve a common look&feel across the whole launchpad. You can access the designer like so: http://[server]:[port]/sap/bc/theming/theme-designer/index.html.</p>	
-		<p class="justify normalRow">A list of standard theme CSS classes can be found <a href="https://sapui5.hana.ondemand.com/#docs/guide/91a4946b0dcf4356aaaedc4e502864f4.html">here</a></p>
-		<p class="justify normalRow">For margins and spacing check out this <a href="https://help.sap.com/saphelp_uiaddon10/helpdata/en/77/7168ffe8324873973151dae2356d1c/content.htm">link</a></p>
+		<p class="justify normalRow">A list of standard theme CSS classes can be found <a href="https://sapui5.hana.ondemand.com/#docs/guide/91a4946b0dcf4356aaaedc4e502864f4.html" target="_blank">here</a></p>
+		<p class="justify normalRow">For margins and spacing check out this <a href="https://help.sap.com/saphelp_uiaddon10/helpdata/en/77/7168ffe8324873973151dae2356d1c/content.htm" target="_blank">link</a></p>
 		<p class="justify normalRow">You should always rely on the standard theming classes to avoid design clashes. But if you really can't help it, I provided a style sheet for you to add your own classes. There are three examples <i>ccTextWhite</i>, <i>ccTextBold</i> and <i>ccTextBig</i>. These were used to create the "minions" tile example. Please note that the styling you apply on the XML box of the configuration screen won't impact the title or the footer. This affects only the tile content.</p>
 <div class="row" id="installation">
 	<h2 class="anchors">Installation</h2>

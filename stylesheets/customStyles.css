@@ -81,6 +81,10 @@ pre code {
 	margin-bottom:6px;
 }
 
+.tileWide{
+  max-width: 500px;
+}
+
 
 /* NAVBAR STYLING */
 .navbar-inverse {
