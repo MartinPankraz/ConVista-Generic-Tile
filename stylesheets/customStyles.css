@@ -1,14 +1,14 @@
 /* CUSTOM CSS */
 a{
-  color:#009fe3;
+  color:#1abaff;
 }
 
 a:hover{
-  color: #33c2ff;
+  color: #009fe3;
 }
 
 a:active{
-  color:#009fe3;
+  color:#1abaff;
 }
 
 b{
