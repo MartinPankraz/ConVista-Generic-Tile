@@ -1,6 +1,22 @@
 /* CUSTOM CSS */
+a{
+  color:#009fe3;
+}
+
+a:hover{
+  color: #33c2ff;
+}
+
+a:active{
+  color:#009fe3;
+}
+
+b{
+  color:#009fe3;
+}
+
 .borderedDivs{
-	border: 1px #005696 dotted;
+	border: 1px #009fe3 dotted;
 	margin-left: 5%;
 }
 .centered{
@@ -32,20 +48,24 @@ div.col-centered {
 
 h2.anchors{
   font-size: 35px;
-  color: #005696;
+  color: #009fe3;
   text-align: center;
   margin: 20px 0 20px 0;
-  border-bottom: 1px #005696 dotted;
+  border-bottom: 1px #009fe3 dotted;
 }
 
 h3.anchors{
 	font-size: 25px;
-	color: #005696;
+	color: #009fe3;
 	text-align: center;
 	margin: 50px 0 20px 0;
 }
+h3{
+  color: #009fe3;
+}
 
 h4{
+  color: #009fe3;
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
@@ -64,9 +84,11 @@ h4{
 
 pre{
 	padding: 10px 20px;
-	color:#2f6f9f;
+	color:#009fe3;
 	font-size: 14px;
 	overflow-x: auto;
+  background-color: #fbfeff;
+  border: 1px #009fe3 dotted;
 }
 
 pre code {
@@ -81,7 +103,13 @@ pre code {
 .tileWide{
   max-height: 250px;
 }
+th{
+  color: #009fe3;
+}
 
+td em{
+  color: #009fe3;
+}
 
 /* NAVBAR STYLING */
 .navbar-inverse {
