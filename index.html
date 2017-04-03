@@ -610,27 +610,36 @@
 
   	$("#myNavbar ul li a[href^='#']").on('click', function(e) {
 
-  	   // prevent default anchor click behavior
-  	   e.preventDefault();
+  		if($(e.target).attr("class") !== "dropdown-toggle"){
+  			// prevent default anchor click behavior
+  			e.preventDefault();
 
-  	   // store hash
-  	   var hash = this.hash;
-  	   var offset = 50;
-  	   // animate
-  	   $('html, body').animate({
-  	       scrollTop: $(hash).offset().top - offset + 'px'
-  	     }, 1000, function(){
+  			// store hash
+  			var hash = this.hash;
+  			var offset = 50;
+  			// animate
+  			$('html, body').animate({
+  			    scrollTop: $(hash).offset().top - offset + 'px'
+  			  }, 1000, function(){
 
-  	       // when done, add hash to url
-  	       // (default click behaviour)
-  	       window.location.hash = hash;
-  	     });
+  			    // when done, add hash to url
+  			    // (default click behaviour)
+  			    window.location.hash = hash;
+  			  });
+  		}
+  	   
 
   	});
 
   	$(document).on('click', '[data-toggle="lightbox"]', function(event) {
   	    event.preventDefault();
   	    $(this).ekkoLightbox();
+  	});
+
+  	 $(document).on('click.nav','.navbar-collapse.in',function(e) {
+  	    if( $(e.target).is('a') ) {
+  	        $(this).removeClass('in').addClass('collapse');
+  	    }
   	});
   </script>
   </body>
