@@ -23,6 +23,16 @@ body{
 }
 
 
+figure figcaption {
+    text-align: center;
+    height: 50px;
+    margin-top: 5px;
+}
+
+div.col-centered {
+  margin-bottom: 20px;
+}
+
 h2.anchors{
   font-size: 35px;
   color: #005696;
@@ -65,6 +75,10 @@ pre{
 pre code {
     overflow-wrap: normal;
     white-space: pre;
+}
+
+.thumbnail {
+	margin-bottom:6px;
 }
 
 
@@ -182,6 +196,13 @@ pre code {
     margin-bottom: 15px;
   }
   .exampleImg{
-	max-width: 250px;
+  max-width: 300px;
+  }
+  .exampleImgWide{
+	max-width: 500px;
+  }
+  .col-centered{
+      float: none;
+      margin: 0 auto;
   }
 }
