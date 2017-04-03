@@ -372,7 +372,7 @@
 			<img class="centered initialRow tileWide" src="images/tile_stock_compare.png" alt="microchart example">
 		</a>
 		<div class="text-center normalRow">
-			<p><em>ADD CHART CAPTION</em></p>
+			<p><em>Two by One Tile example with two columns showing live data from Yahoo finance API. That way you could compare trends for example.</em></p>
 		</div>
 
 		<p class="justify normalRow">You can switch in between two display modes. Either you have one wide object (e.g. a chart) or you have two smaller objects next to each other. For the latter option you get an additional Service URL input as well as individual footer texts. If you don't fill the second service URL, the first one will be used for the second object and footer as well.</p>
@@ -397,14 +397,17 @@
 		</div>
 
 			<h4>YQL for service URL configuration</h4>
-			<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20in%20(%22^GDAXI%22)%20AND%20startDate=%272017-02-01%27%20AND%20endDate=%272017-03-02%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&moveYahooDates=true"  target="_blank">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("^GDAXI") AND startDate='2017-02-01' AND endDate='2017-03-02'&format=json&env=store://datatables.org/alltableswithkeys&moveYahooDates=true</a>
+			<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20in%20(%22^GDAXI%22)%20AND%20startDate=%272017-02-01%27%20AND%20endDate=%272017-03-02%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&moveYahooDates=true" target="_blank">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("^GDAXI") AND startDate='2017-02-01' AND endDate='2017-03-02'&format=json&env=store://datatables.org/alltableswithkeys&moveYahooDates=true</a>
+			<p>
+			<h5>Second YQL call for second chart:</h5>
+			<a href="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20in%20(%22^GSPC%22)%20AND%20startDate=%272017-02-01%27%20AND%20endDate=%272017-03-02%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&moveYahooDates=true" target="_blank">https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("^GSPC") AND startDate='2017-02-01' AND endDate='2017-03-02'&format=json&env=store://datatables.org/alltableswithkeys&moveYahooDates=true</a>
 			<p>
 			<p>Please note that the custom parameter <b>moveYahooDates=true</b> takes care of moving the initial dates of the API call forward maintaining the same spread. Check method <i>getMovingDateInterval</i> on the Tile controller for details.</p>
 			<h4>Title</h4>
 			<p>Market Trend Compare</p>
 
 			<h4>Subtitle</h4>
-			<p class="justify">JSONModel path for Yahoo API callback structure. The structure contains a string but I am applying a number format</p>
+			<p class="justify">JSONModel path for Yahoo API callback structure. The structure contains a string but I am applying a number format.</p>
 			  <pre><code>{"path":"/query/results/quote/0/Close","formatter":".formatStringToFloat"}</code></pre>
 			
 			<h4>Type (xml)</h4> 
