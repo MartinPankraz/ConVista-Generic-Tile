@@ -192,7 +192,10 @@ pre code {
     margin-bottom: 15px;
   }
   .exampleImg{
-	max-width: 300px;
+  max-width: 300px;
+  }
+  .exampleImgWide{
+	max-width: 500px;
   }
   .col-centered{
       float: none;
